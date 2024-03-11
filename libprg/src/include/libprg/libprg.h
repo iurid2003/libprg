@@ -12,5 +12,5 @@ result_t sub(double a, double b);
 result_t sum(double a, double b);
 result_t compute(double a, double b, operation_t op);
 // LISTA
-int busca_ord(int n);
+int lista(int n,int tamanho);
 #endif
