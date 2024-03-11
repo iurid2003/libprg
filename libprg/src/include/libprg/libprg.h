@@ -1,3 +1,7 @@
+#include "stdio.h"
+#include "stdbool.h"
+#include "stdlib.h"
+
 #ifndef LIBPRG_LIBPRG_H
 #define LIBPRG_LIBPRG_H
 
