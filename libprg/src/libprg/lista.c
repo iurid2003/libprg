@@ -28,7 +28,7 @@ int busca_linear(lista_a lista ,int alvo){
     }
     return  0 ;
 }
-bool buscaLinearOrdenada(lista_a lista ,int alvo) {
+int buscaLinearOrdenada(lista_a lista ,int alvo) {
     int i = 0;
 
     while (i < lista.tamanho && lista.vetor < alvo) {
@@ -37,9 +37,9 @@ bool buscaLinearOrdenada(lista_a lista ,int alvo) {
 
     // Se o elemento foi encontrado, retorna verdadeiro
     if (i < lista.tamanho && lista.vetor == alvo) {
-        return true;
+        return 1;
     } else {
-        return false; // Elemento não encontrado
+        return 0 ; // Elemento não encontrado
     }
 }
 
@@ -60,7 +60,7 @@ int busca_binaria(lista_a lista ,int tamanho, int alvo){
     return 0 ;
 }
 
-int recursivo_bin(int *vet ,int i , int f ,int alvo){
+int recursivo_binario(int *vet ,int i , int f ,int alvo){
   int meio ;
     if(i < f){
         meio = i + (f - i)/2;
@@ -68,9 +68,9 @@ int recursivo_bin(int *vet ,int i , int f ,int alvo){
          return 1 ;
         }
         if(vet[meio] > alvo){
-           return recursivo_bin(vet,i,meio - 1,alvo);
+           return recursivo_binario(vet,i,meio - 1,alvo);
         }
-        return recursivo_bin(vet,meio + 1,f,alvo);
+        return recursivo_binario(vet,meio + 1,f,alvo);
     }
     return  0 ;
 }
