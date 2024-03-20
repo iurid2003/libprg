@@ -7,11 +7,11 @@ typedef struct lista_a {
     int *vetor ;
     int capacidade ;
     bool ordenada ;
-} lista ;
+} lista_a ;
 
 int criar_lista(){
 
-    lista_a* lista =(lista_a*) malloc(sizeof(lista) );
+    lista* lista =(lista_a*) malloc(sizeof(lista) );
     lista->capacidade = 10 ;
     lista->tamanho = 0  ;
     lista->ordenada  = false ;
@@ -19,7 +19,7 @@ int criar_lista(){
 
 };
 
-int busca_linear(lista_a lista ,int alvo){
+int busca_linear(lista lista ,int alvo){
     int i = 0 ;
     for (i ; i < lista.tamanho ; i++){
         if(lista.vetor[i] == alvo){
