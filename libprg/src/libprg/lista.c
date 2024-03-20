@@ -2,14 +2,14 @@
 // Created by aluno on 04/03/24.
 //
 #include "libprg/libprg.h"
-typedef struct lista {
+typedef struct lista_a {
     int tamanho  ;
     int *vetor ;
     int capacidade ;
     bool ordenada ;
-} lista_a ;
+} lista ;
 
-void crar_lista(){
+int criar_lista(){
 
     lista_a* lista =(lista_a*) malloc(sizeof(lista) );
     lista->capacidade = 10 ;
@@ -54,9 +54,9 @@ int binario_recursivo(lista_a  lista ,int i , int f ,int alvo){
          return 1 ;
         }
         if(lista.vetor[meio] > alvo){
-           return binario_recursivo(lista.vetor,i,meio - 1,alvo);
+           return binario_recursivo(lista,i,meio - 1,alvo);
         }
-        return binario_recursivo(lista.vetor,i,meio + 1,f,alvo);
+        return binario_recursivo(lista,i,meio + 1,f,alvo);
     }
     return  0 ;
 }
