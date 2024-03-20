@@ -46,21 +46,21 @@ int busca_binaria(lista_a lista ,int tamanho, int alvo){
     return i ;
 }
 
-int binario_recursivo(lista_a  lista ,int i , int f ,int alvo){
-  int meio ;
-    if(i < f){
-        meio = i + (f - i)/2;
-        if(lista.vetor[meio] == alvo){
-         return 1 ;
-        }
-        if(lista.vetor[meio] > alvo){
-           return binario_recursivo(lista,i,meio - 1,alvo);
-        }
-        return binario_recursivo(lista,i,meio + 1,f,alvo);
-    }
-    return  0 ;
-}
+int binario_recursivo(lista_a lista, int i, int f, int alvo) {
+    int meio;
 
+    if (i <= f) {
+        meio = i + (f - i) / 2;
+        if (lista.vetor[meio] == alvo) {
+            return 1; // Elemento encontrado
+        }
+        if (lista.vetor[meio] > alvo) {
+            return binario_recursivo(lista, i, meio - 1, alvo); // Busca na metade esquerda
+        }
+        return binario_recursivo(lista, meio + 1, f, alvo); // Busca na metade direita
+    }
+    return 0; // Elemento não encontrado
+}
 int* inserir_numero(lista_a lista ,int num ){
     lista.vetor = malloc(sizeof(int) * (lista.tamanho + 1));
     lista.vetor[lista.tamanho++] = num ;
