@@ -9,7 +9,7 @@ typedef struct lista {
     bool ordenada ;
 } lista_a ;
 
-void ciar_lista(){
+void crar_lista(){
 
     lista_a* lista =(lista_a*) malloc(sizeof(lista) );
     lista->capacidade = 10 ;
@@ -23,24 +23,10 @@ int busca_linear(lista_a lista ,int alvo){
     int i = 0 ;
     for (i ; i < lista.tamanho ; i++){
         if(lista.vetor[i] == alvo){
-            return 1 ;
+            return i ;
         }
     }
-    return  0 ;
-}
-int buscaLinearOrdenada(lista_a lista ,int alvo) {
-    int i = 0;
-
-    while (i < lista.tamanho && lista.vetor < alvo) {
-        i++;
-    }
-
-    // Se o elemento foi encontrado, retorna verdadeiro
-    if (i < lista.tamanho && lista.vetor == alvo) {
-        return 1;
-    } else {
-        return 0 ; // Elemento não encontrado
-    }
+    return  i ;
 }
 
 int busca_binaria(lista_a lista ,int tamanho, int alvo){
@@ -50,48 +36,58 @@ int busca_binaria(lista_a lista ,int tamanho, int alvo){
     while (i <= j){
         meio = i + (j - i)/2;
         if(lista.vetor[meio] == alvo){
-            return 1 ;
+            return i ;
         }else if(lista.vetor[meio] < alvo){
             i = meio + 1 ;
         }else{
             j = meio - 1 ;
         }
     }
-    return 0 ;
+    return i ;
 }
 
-int recursivo_binario(int *vet ,int i , int f ,int alvo){
+int binario_recursivo(lista_a  lista ,int i , int f ,int alvo){
   int meio ;
     if(i < f){
         meio = i + (f - i)/2;
-        if(vet[meio] == alvo){
+        if(lista.vetor[meio] == alvo){
          return 1 ;
         }
-        if(vet[meio] > alvo){
-           return recursivo_binario(vet,i,meio - 1,alvo);
+        if(lista.vetor[meio] > alvo){
+           return binario_recursivo(lista.vetor,i,meio - 1,alvo);
         }
-        return recursivo_binario(vet,meio + 1,f,alvo);
+        return binario_recursivo(lista.vetor,i,meio + 1,f,alvo);
     }
     return  0 ;
 }
 
-int* inserir_num(int *vet , int tamanho , int num ){
-    vet = malloc(sizeof(int) * (tamanho + 1));
-    vet[tamanho++] = num ;
+int* inserir_numero(lista_a lista ,int num ){
+    lista.vetor = malloc(sizeof(int) * (lista.tamanho + 1));
+    lista.vetor[lista.tamanho++] = num ;
 
     //talvez eu volte ordenado ;
 
-    return vet ;
+    return lista.vetor ;
 
-};
-
-int* remove_vet(int *vet , int tamanho , int alvo){
-
-
-
-    return  vet ;
 }
 
+void removeNumero(lista_a lista, int num) {
+    int i, j;
+
+    for (i = 0; i < lista.tamanho; i++) {
+        if (lista.vetor[i] == num) {
+
+            for (j = i; j < lista.tamanho - 1; j++) {
+                lista.vetor[j] = lista.vetor[j + 1];
+            }
+
+            // Decrementa o tamanho do vetor após a remoção
+            (lista.tamanho)--;
+            // Decrementa i para verificar novamente o mesmo índice, já que o vetor foi deslocado
+            i--;
+        }
+    }
+}
 
 
 
