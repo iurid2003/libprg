@@ -23,10 +23,10 @@ int busca_linear(lista lista ,int alvo){
     int i = 0 ;
     for (i ; i < lista.tamanho ; i++){
         if(lista.vetor[i] == alvo){
-            return i ;
+            return 1 ;
         }
     }
-    return  i ;
+    return  0 ;
 }
 
 int busca_binaria(lista_a lista ,int tamanho, int alvo){
@@ -36,14 +36,14 @@ int busca_binaria(lista_a lista ,int tamanho, int alvo){
     while (i <= j){
         meio = i + (j - i)/2;
         if(lista.vetor[meio] == alvo){
-            return i ;
+            return 1 ;
         }else if(lista.vetor[meio] < alvo){
             i = meio + 1 ;
         }else{
             j = meio - 1 ;
         }
     }
-    return i ;
+    return 0 ;
 }
 
 int binario_recursivo(lista_a lista, int i, int f, int alvo) {
