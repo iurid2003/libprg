@@ -16,11 +16,19 @@ fila_a * cria_fila() {
 
 
 }
-void enfilerar(fila_a fila, int n ){
+void* enfilerar(fila_a fila, int n ){
     /*Adiciona um elemento no final da fila*/
-    fila.vetor[fila.inicio + 1] = n  ;
+    fila.vetor[fila.tamanho ] = n  ;
+    for (int i = 0; i < fila.tamanho - 2; ++i) {
+        fila.vetor[i] = 0 ;
+    }
 
+    for (int i = 0 ;i < fila.tamanho;i++){
+        printf("%d",fila.vetor[i]);
+    }
 }
+
+
 
 
 
