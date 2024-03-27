@@ -15,16 +15,13 @@ fila_a * cria_fila(int capacidade) {
     fila->vazia = true ;
     fila->inicio = 0 ;
     fila->capacidade = capacidade ;
-
-
-
 }
 void enfilerar(fila_a * fila, int n ) {
     fila->vetor[fila->tamanho--] = n;
 }
+int desenfilerar(fila_a * fila){
 
-
-
+}
 int getinicio(fila_a * fila){
     return fila->vetor[] ;
 }
@@ -34,10 +31,7 @@ int getfinal(fila_a *  fila){
 int gettamamho(fila_a * fila){
     return  fila->tamanho ;
 }
-
-
 bool isvazia(fila_a * fila){}
-
 bool ischeia(fila_a * fila){}
 
 

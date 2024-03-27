@@ -27,7 +27,6 @@ int* inserir_numero( lista ,int num );
 void removeNumero(lista, int num) ;
 
 // FILA
-
 typedef struct fila_a fila;
 void enfirelar(fila);
 int  desenfilerar(fila);

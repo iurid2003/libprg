@@ -18,7 +18,6 @@ int criar_lista(){
     lista->vetor = (int*) malloc(sizeof(int) * lista->capacidade) ;
 
 };
-
 int busca_linear(lista lista ,int alvo){
     int i = 0 ;
     for (i ; i < lista.tamanho ; i++){
@@ -28,7 +27,6 @@ int busca_linear(lista lista ,int alvo){
     }
     return  0 ;
 }
-
 int busca_binaria(lista_a  lista ,int tamanho, int alvo){
     int i = 1 ;
     int j = tamanho ;
