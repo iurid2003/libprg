@@ -29,7 +29,7 @@ int busca_linear(lista lista ,int alvo){
     return  0 ;
 }
 
-int busca_binaria(lista_a lista ,int tamanho, int alvo){
+int busca_binaria(lista_a  lista ,int tamanho, int alvo){
     int i = 1 ;
     int j = tamanho ;
     int meio = 0;

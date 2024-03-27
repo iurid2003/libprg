@@ -30,8 +30,7 @@ void removeNumero(lista, int num) ;
 
 typedef struct fila_a fila;
 void enfirelar(fila);
-void desenfilerar(fila);
-void imprime_fila(fila);
+int  desenfilerar(fila);
 int inicio(fila);
 int fim(fila);
 int tam(fila);
