@@ -22,13 +22,18 @@ fila_a * cria_fila(int capacidade) {
 void enfilerar(fila_a * fila, int n ){
     fila->vetor[fila->tamanho] = n ;
     int n_ant = n ;
-    if(fila->vetor[fila->tamanho]){
-        fila->vetor[fila->tamanho - 1] = n ;
+    while() {
+        if (fila->vetor[fila->tamanho - 1] == NULL) {
+            fila->vetor[fila->tamanho - 1] = n;
+        }
     }
   }
 
+  int desenfilerar(fila_a * fila ){}
+
+
 int getinicio(fila_a * fila){
-    return fila->vetor[0] ;
+    return fila->vetor[] ;
 }
 int getfinal(fila_a *  fila){
     return fila->vetor[fila->tamanho] ;
