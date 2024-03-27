@@ -19,17 +19,10 @@ fila_a * cria_fila(int capacidade) {
 
 
 }
-void enfilerar(fila_a * fila, int n ){
-    fila->vetor[fila->tamanho] = n ;
-    int n_ant = n ;
-    while() {
-        if (fila->vetor[fila->tamanho - 1] == NULL) {
-            fila->vetor[fila->tamanho - 1] = n;
-        }
-    }
-  }
+void enfilerar(fila_a * fila, int n ) {
+    fila->vetor[fila->tamanho--] = n;
+}
 
-  int desenfilerar(fila_a * fila ){}
 
 
 int getinicio(fila_a * fila){
