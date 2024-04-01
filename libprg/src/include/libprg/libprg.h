@@ -27,13 +27,10 @@ int* inserir_numero( lista ,int num );
 void removeNumero(lista, int num) ;
 
 // FILA
-typedef struct fila_a fila;
-void enfirelar(fila);
-int  desenfilerar(fila);
-int inicio(fila);
-int fim(fila);
-int tam(fila);
-int vazia(fila);
-int cheia(fila);
+typedef struct Fila fila;
+void enqueue() ;
+
+
+
 
 #endif
