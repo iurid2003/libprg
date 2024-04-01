@@ -18,8 +18,8 @@ result_t sum(double a, double b);
 result_t compute(double a, double b, operation_t op);
 
 // LISTA
-typedef struct lista_a lista  ;
-lista * criar_lista();
+//typedef struct lista_a lista  ;
+//lista * criar_lista();
 //int busca_linear(lista ,int alvo);
 //int busca_binaria( lista ,int tamanho, int alvo);
 //int binario_recursivo( lista ,int i , int f ,int alvo);
@@ -27,8 +27,8 @@ lista * criar_lista();
 //void removeNumero(lista, int num) ;
 
 // FILA
-typedef struct Fila fila;
-void enqueue(fila) ;
+//typedef struct Fila fila;
+//void enqueue(fila) ;
 
 
 //LISTA CONTATO
