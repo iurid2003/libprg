@@ -28,7 +28,7 @@ void removeNumero(lista, int num) ;
 
 // FILA
 typedef struct Fila fila;
-void enqueue() ;
+void enqueue(fila) ;
 
 
 
