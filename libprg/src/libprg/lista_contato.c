@@ -14,11 +14,11 @@ typedef struct lista_Contato{
     int capacidade ;
 
     Contatos * contatos ;
-}Lista_Contato ;
+}lista_Contato_t ;
 
 
-Lista_Contato *criar_lista_contato() {
-    Lista_contato *listacontato = (Lista_Contato*) malloc(sizeof(Lista_Contato));
+lista_Contato_t * lista_Contato_t() {
+    lista_contato_t *listacontato = (lista_Contato_t*) malloc(sizeof(lista_Contato_t));
     listacontato->tamanho = 0;
     listacontato->capacidade = 10;
     listacontato->contatos = (Contatos*) malloc(sizeof(Contatos) * listacontato->capacidade);

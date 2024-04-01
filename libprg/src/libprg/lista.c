@@ -1,6 +1,6 @@
-////
-//// Created by aluno on 04/03/24.
-////
+//
+// Created by aluno on 04/03/24.
+//
 //#include "libprg/libprg.h"
 //typedef struct lista_a {
 //    int tamanho  ;
@@ -20,9 +20,9 @@
 //};
 //
 //
-////int * inserir_num(lista_a lista,int n){
-////    lista.vetor[lista.tamanho++] = n ;
-////}
+//int * inserir_num(lista_a lista,int n){
+//    lista.vetor[lista.tamanho++] = n ;
+//}
 //
 
 
