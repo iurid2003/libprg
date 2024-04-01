@@ -19,9 +19,9 @@ typedef struct lista_Contato{
 
 Lista_Contato *criar_lista_contato() {
     Lista_contato *listacontato = (Lista_Contato*) malloc(sizeof(Lista_Contato));
-        listacontato->tamanho = 0;
-        listacontato->capacidade = 10;
-        listacontato->contatos = (Contatos*) malloc(sizeof(Contatos) * listacontato->capacidade);
+    listacontato->tamanho = 0;
+    listacontato->capacidade = 10;
+    listacontato->contatos = (Contatos*) malloc(sizeof(Contatos) * listacontato->capacidade);
 
     return listacontato;
 }
@@ -38,7 +38,6 @@ void ler_contato(Contatos *c){
 
 void inserir_contato_lista(Lista_Contato * lista , Contatos  c ){
      lista->contatos[lista->tamanho++] = c ;
-
 }
 
 

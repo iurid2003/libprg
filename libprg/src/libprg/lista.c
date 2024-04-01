@@ -20,11 +20,9 @@ lista_a* criar_lista(){
 };
 
 
-int * inserir_num(lista_a lista,int n){
-    lista.vetor[lista.tamanho] = n ;
-
-    return lista ;
-}
+//int * inserir_num(lista_a lista,int n){
+//    lista.vetor[lista.tamanho++] = n ;
+//}
 
 
 
