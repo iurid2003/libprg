@@ -19,7 +19,7 @@ result_t compute(double a, double b, operation_t op);
 
 // LISTA
 typedef struct lista_a lista  ;
-int criar_lista();
+lista * criar_lista();
 int busca_linear(lista ,int alvo);
 int busca_binaria( lista ,int tamanho, int alvo);
 int binario_recursivo( lista ,int i , int f ,int alvo);
@@ -30,6 +30,10 @@ void removeNumero(lista, int num) ;
 typedef struct Fila fila;
 void enqueue(fila) ;
 
+
+//LISTA CONTATO
+typedef struct lista_Contato   Lista_contato ;
+ Lista_contato * criar_lista_contato () ;
 
 
 

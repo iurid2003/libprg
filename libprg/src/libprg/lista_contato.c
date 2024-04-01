@@ -9,45 +9,37 @@ typedef struct {
 
 /*Criar a lista de Contatos*/
 
-typedef struct lista_contato{
+typedef struct lista_Contato{
     int tamanho  ;
     int capacidade ;
 
-    /*vetor de struct*/
-    //tenho que ler e armazenar na minha lista o struct
-    int *v ;
     Contatos * contatos ;
-}Lista_contato ;
+}Lista_Contato ;
 
 
-Lista_contato * contato (){
-    Lista_contato * contato =   ;
-   contato->tamanho = 0 ;
-   contato->capacidade = 10 ;
+Lista_Contato *criar_lista_contato() {
+    Lista_contato *listacontato = (Lista_Contato*) malloc(sizeof(Lista_Contato));
+        listacontato->tamanho = 0;
+        listacontato->capacidade = 10;
+        listacontato->contatos = (Contatos*) malloc(sizeof(Contatos) * listacontato->capacidade);
 
+    return listacontato;
+}
+
+void ler_contato(Contatos *c){
+    printf("Entre com o nome: ");
+    fgets(c->nome,100,stdin);
+    printf("Entre com o email: ");
+    fgets(c->email,50,stdin);
+    printf("Entre com o numero: ");
+    fgets(c->telefone,15,stdin);
 
 }
 
-/*Tenho qur armazenar na lista essa struct na pos 1 */
-void ler_contato(Contatos c){
-    printf("Entre com o nome");
-    fgets(c.nome,100,stdin);
-    printf("Entre com o telefone");
-    fgets(c.telefone,20,stdin);
-    printf("Entre com email");
-    fgets(c.email,20,stdin);
-}
-
-/*Essa linha imprime um contato */
-//tenho que fazer isso dentro da lista ;
-void imprimir_contatos(Contatos c, int i ){
-    printf("--Contato %d--",i);
-    printf("Nome: %s",c.nome);
-    printf("Email: %s",c.email);
-    printf("");
+void inserir_contato_lista(Lista_Contato * lista , Contatos  c ){
+     lista->contatos[lista->tamanho++] = c ;
 
 }
-
 
 
 
