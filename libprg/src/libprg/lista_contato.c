@@ -12,17 +12,43 @@ typedef struct {
 typedef struct lista_contato{
     int tamanho  ;
     int capacidade ;
-    /*Vou Criar 10 Contatos */
+
+    /*vetor de struct*/
+    //tenho que ler e armazenar na minha lista o struct
+    int *v ;
+    Contatos * contatos ;
 }Lista_contato ;
 
 
-Lista_contato * contato (int n){
+Lista_contato * contato (){
     Lista_contato * contato =   ;
    contato->tamanho = 0 ;
    contato->capacidade = 10 ;
 
 
 }
+
+/*Tenho qur armazenar na lista essa struct na pos 1 */
+void ler_contato(Contatos c){
+    printf("Entre com o nome");
+    fgets(c.nome,100,stdin);
+    printf("Entre com o telefone");
+    fgets(c.telefone,20,stdin);
+    printf("Entre com email");
+    fgets(c.email,20,stdin);
+}
+
+/*Essa linha imprime um contato */
+//tenho que fazer isso dentro da lista ;
+void imprimir_contatos(Contatos c, int i ){
+    printf("--Contato %d--",i);
+    printf("Nome: %s",c.nome);
+    printf("Email: %s",c.email);
+    printf("");
+
+}
+
+
 
 
 
