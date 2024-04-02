@@ -32,7 +32,9 @@ result_t compute(double a, double b, operation_t op);
 
 
 //LISTA CONTATO
-typedef struct ListaContato  ;
+
+struct ListaContato *  ;
+
 
 
 
