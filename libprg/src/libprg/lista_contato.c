@@ -14,19 +14,19 @@ typedef struct lista_Contato{
     int capacidade ;
 
     Contatos * contatos ;
-}lista_Contato_t ;
+}ListaContato ;
 
 
-lista_Contato_t * lista_Contato_t() {
-    lista_contato_t *listacontato = (lista_Contato_t*) malloc(sizeof(lista_Contato_t));
-    listacontato->tamanho = 0;
-    listacontato->capacidade = 10;
-    listacontato->contatos = (Contatos*) malloc(sizeof(Contatos) * listacontato->capacidade);
+ListaContato * listacontato() {
+    ListaContato *listacontato =(ListaContato *) malloc(sizeof(ListaContato));
+     listacontato->tamanho= 0;
+     listacontato->capacidade = 10;
+     listacontato->contatos = (Contatos*) malloc(sizeof(Contatos) * listacontato->capacidade);
 
     return listacontato;
 }
 
-void ler_contato(Contatos *c){
+void ler_contato(Contatos * c){
     printf("Entre com o nome: ");
     fgets(c->nome,100,stdin);
     printf("Entre com o email: ");
@@ -36,7 +36,7 @@ void ler_contato(Contatos *c){
 
 }
 
-void inserir_contato_lista(Lista_Contato * lista , Contatos  c ){
+void inserir_contato_lista(ListaContato * lista , Contatos c ){
      lista->contatos[lista->tamanho++] = c ;
 }
 

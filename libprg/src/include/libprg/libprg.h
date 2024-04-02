@@ -32,9 +32,8 @@ result_t compute(double a, double b, operation_t op);
 
 
 //LISTA CONTATO
-typedef struct Contato lista_contato_t ;
-lista_Contato_t * lista_Contato_t () ;
-void ler_contato(lista_contato_t * contato);
+typedef struct ListaContato  ;
+
 
 
 
