@@ -38,7 +38,17 @@ void ler_contato(Contatos * c){
 
 void inserir_contato_lista(ListaContato * lista , Contatos c ){
      lista->contatos[lista->tamanho++] = c ;
+
 }
+
+void imprimir_contato(ListaContato * lista , Contatos c){
+
+    printf("Nome : %s \n",c.nome);
+    printf("Email : %s \n",c.email);
+    printf("Telefone : %s \n",c.telefone);
+
+}
+
 
 
 
