@@ -27,7 +27,7 @@ void pop(Pilha p ){
 }
 
 int  size(Pilha p ){
-    return
+    return 0;
 }
 
 

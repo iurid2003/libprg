@@ -32,15 +32,15 @@ result_t compute(double a, double b, operation_t op);
 //void ler_contato(Contatos * c);
 
 //LISTA CONTATO
-typedef struct Contatos_c Contatos ;
-typedef  struct  lista lista_c  ;
-lista_c * lista() ;
-void inserir_contato_lista(lista_c , Contatos c);
+typedef struct Contatos Contatos_c ;
+typedef  struct  Lista lista_c  ;
+lista_c * lista();
+void inserir_contato_lista(lista_c* lista , Contatos_c c);
 
 
 // PILHA ;
 typedef  struct Pilha_a Pilha ;
-Pilha * Criar_Pilha() ;
+Pilha * Criar_Pilha();
 
 
 
