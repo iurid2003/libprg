@@ -27,13 +27,24 @@ result_t compute(double a, double b, operation_t op);
 //void removeNumero(lista, int num) ;
 
 // FILA
-//typedef struct Fila fila;
-//void enqueue(fila) ;
 
+//void enqueue(fila) ;
+//void ler_contato(Contatos * c);
 
 //LISTA CONTATO
+typedef struct Contatos_c Contatos ;
+typedef  struct  lista lista_c  ;
+lista_c * lista() ;
+void inserir_contato_lista(lista_c , Contatos c);
 
-struct ListaContato *  ;
+
+// PILHA ;
+typedef  struct Pilha_a Pilha ;
+Pilha * Criar_Pilha() ;
+
+
+
+
 
 
 
