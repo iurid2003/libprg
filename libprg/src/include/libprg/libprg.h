@@ -36,7 +36,8 @@ typedef struct Contatos Contatos_c ;
 typedef  struct  lista lista_c  ;
 lista_c * lista();
 void inserir_contato_lista(lista_c* lista , Contatos_c c);
-
+void ler_contato(Contatos_c *c);
+void imprimir_contatos(lista_c *lista);
 
 // PILHA ;
 typedef  struct Pilha_a Pilha ;
