@@ -33,7 +33,7 @@ result_t compute(double a, double b, operation_t op);
 
 //LISTA CONTATO
 typedef struct Contatos Contatos_c ;
-typedef  struct  Lista lista_c  ;
+typedef  struct  lista lista_c  ;
 lista_c * lista();
 void inserir_contato_lista(lista_c* lista , Contatos_c c);
 
