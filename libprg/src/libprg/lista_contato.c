@@ -38,6 +38,10 @@ void ler_contato(Contatos_c *c) {
 /* Função para inserir um contato na lista */
 void inserir_contato_lista(lista_c* lista , Contatos_c c) {
     lista->contatos[lista->tamanho++] = c;
+
+    if(lista->tamanho <= lista->capacidade){
+        printf("Lista Cheia");
+    }
 }
 
 /*buscar contato especifico */
@@ -51,7 +55,7 @@ void buscar_contato(lista_c * lista , char * nome){
             return ;
         }
     }
-    printf("Esse nome não foi encontrado.");
+    printf("Esse nome não foi encontrado.\n");
 }
 
 /* Função para imprimir todos os contatos */
@@ -88,9 +92,8 @@ void menu(lista_c * Contatos){
         printf("novo contato : 1 \n");
         printf("Imprimir contatos: 2\n");
         printf("buscar contato : 3\n");
-        printf("editar contato : 4\n");
+        printf("Sair: 4\n");
 
-        printf("Sair: 5\n");
         printf("Escolha : ");
         scanf("%d",&p);
         printf("\n");
@@ -100,14 +103,11 @@ void menu(lista_c * Contatos){
                     Contatos->tamanho++ ; break ;
             case 2 : imprimir_contatos(Contatos);break ;
             case 3 :
-                printf("Entre com o nome");
-                getchar();
+                printf("Entre com o nome : ");
                 fgets(nome,100,stdin);
                 buscar_contato(lista_a(),nome);
                 break ;
-            case 4 :
-                break;
-            case 5 : printf("Saindo"); break ;
+            case 4 : printf("Saindo"); break ;
             default:
                 printf("Opcao inexistente\n");
         }
