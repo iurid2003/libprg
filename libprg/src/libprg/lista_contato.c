@@ -20,6 +20,7 @@ lista_c *lista_a() {
 }
 
 /* Função para ler um novo contato */
+/*Tenho que fazer voltar */
 void ler_contato(Contatos_c *c) {
     getchar();
     printf("---Contato---\n");
@@ -56,9 +57,11 @@ void buscar_contato(lista_c * lista , char * nome){
 /* Função para imprimir todos os contatos */
 void imprimir_contatos(lista_c *lista) {
     for (int i = 0; i < lista->tamanho; ++i) {
+        printf("---CONTATO---");
         printf(" Nome : %s ", lista->contatos[i].nome);
         printf("Email : %s ", lista->contatos[i].email);
         printf("Telefone : %s ", lista->contatos[i].telefone);
+        printf("\n");
     }
 }
 
