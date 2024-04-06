@@ -58,6 +58,7 @@ void buscar_contato(lista_c * lista , char * nome){
 
 /* Função para imprimir todos os contatos */
 void imprimir_contatos(lista_c *lista) {
+    printf("--LISTA DE CONTATOS--\n");
     for (int i = 0; i < lista->tamanho; ++i) {
         printf("---CONTATO---\n");
         printf(" Nome : %s ", lista->contatos[i].nome);
