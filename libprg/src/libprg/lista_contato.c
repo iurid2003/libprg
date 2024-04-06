@@ -44,8 +44,8 @@ void inserir_contato_lista(lista_c* lista , Contatos_c c) {
 
 /*buscar contato especifico */
 void buscar_contato(lista_c * lista , char * nome){
-    for(int i = 0 ; i < lista->tamanho  + 1; i++ ){
-        if(strcmp(lista->contatos[i].nome, nome) == 0 ){
+    for(int i = 0 ; i < lista->tamanho; i++ ){
+        if(strcmp(lista->contatos[i].nome,nome) == 0 ){
             printf("Nome : %s \n", lista->contatos[i].nome);
             printf("Email : %s \n", lista->contatos[i].email);
             printf("Telefone : %s \n", lista->contatos[i].telefone);
@@ -58,6 +58,7 @@ void buscar_contato(lista_c * lista , char * nome){
 
 /* Função para imprimir todos os contatos */
 void imprimir_contatos(lista_c *lista) {
+    getchar();
     printf("--LISTA DE CONTATOS--\n");
     for (int i = 0; i < lista->tamanho; ++i) {
         printf("---CONTATO---\n");
