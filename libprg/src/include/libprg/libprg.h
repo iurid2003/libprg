@@ -11,6 +11,12 @@ typedef struct {
 } result_t;
 
 
+typedef struct Contatos {
+    char nome[100];
+    char email[50];
+    char telefone[20];
+} Contatos_c;
+
 typedef enum { SUM, SUB } operation_t;
 //SOMA
 result_t sub(double a, double b);
@@ -32,7 +38,6 @@ result_t compute(double a, double b, operation_t op);
 //void ler_contato(Contatos * c);
 
 //LISTA CONTATO
-typedef struct Contatos Contatos_c ;
 typedef  struct  lista lista_c  ;
 lista_c *lista_a();
 void inserir_contato_lista(lista_c* lista , Contatos_c c);
@@ -40,8 +45,8 @@ void ler_contato(Contatos_c *c);
 void imprimir_contatos(lista_c *lista);
 
 // PILHA ;
-typedef  struct Pilha_a Pilha ;
-Pilha * Criar_Pilha();
+//typedef  struct Pilha_a Pilha ;
+//Pilha * Criar_Pilha();
 
 
 
