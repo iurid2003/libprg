@@ -73,7 +73,7 @@ void realocar_lista(lista_c * lista){
 
 }
 
-void menu(lista_c * contatos){
+void menu(lista_c * Contatos){
     int p = 0 ;
     char nome[100] ;
 
@@ -89,9 +89,9 @@ void menu(lista_c * contatos){
         scanf("%d",&p);
 
         switch (p) {
-            case 1 : ler_contato(contatos->contatos + contatos->tamanho);
-                    contatos->tamanho++ ; break ;
-            case 2 : imprimir_contatos(contatos);break ;
+            case 1 : ler_contato(Contatos->contatos + Contatos->tamanho);
+                    Contatos->tamanho++ ; break ;
+            case 2 : imprimir_contatos(Contatos);break ;
             case 3 :
                 printf("Entre com o nome");
                 getchar();
