@@ -104,6 +104,7 @@ void menu(lista_c * Contatos){
             case 2 : imprimir_contatos(Contatos);break ;
             case 3 :
                 printf("Entre com o nome : ");
+                getchar();
                 fgets(nome,100,stdin);
                 buscar_contato(lista_a(),nome);
                 break ;
