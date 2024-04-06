@@ -43,7 +43,7 @@ lista_c *lista_a();
 void inserir_contato_lista(lista_c* lista , Contatos_c c);
 void ler_contato(Contatos_c *c);
 void imprimir_contatos(lista_c *lista);
-
+void menu(lista_c * contatos);
 // PILHA ;
 //typedef  struct Pilha_a Pilha ;
 //Pilha * Criar_Pilha();

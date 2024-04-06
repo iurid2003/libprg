@@ -54,7 +54,7 @@ void buscar_contato(lista_c * lista , char * nome){
 /* Função para imprimir todos os contatos */
 void imprimir_contatos(lista_c *lista) {
     for (int i = 0; i < lista->tamanho; ++i) {
-        printf("Nome : %s ", lista->contatos[i].nome);
+        printf(" Nome : %s ", lista->contatos[i].nome);
         printf("Email : %s ", lista->contatos[i].email);
         printf("Telefone : %s ", lista->contatos[i].telefone);
     }
@@ -71,6 +71,40 @@ void realocar_lista(lista_c * lista){
 
    }
 
+}
+
+void menu(lista_c * contatos){
+    int p = 0 ;
+    char nome[100] ;
+
+    while (p != 5){
+        printf("---CONTATOS---\n");
+        printf("ESCOLHA UMA FUNCAO\n");
+        printf("novo contato : 1 \n");
+        printf("Imprimir contatos: 2\n");
+        printf("buscar contato : 3\n");
+        printf("editar contato : 4\n");
+
+        printf("Sair: 5\n");
+        scanf("%d",&p);
+
+        switch (p) {
+            case 1 : ler_contato(contatos->contatos + contatos->tamanho);
+                    contatos->tamanho++ ; break ;
+            case 2 : imprimir_contatos(contatos);break ;
+            case 3 :
+                printf("Entre com o nome");
+                getchar();
+                fgets(nome,100,stdin);
+                buscar_contato(lista_a(),nome);
+                break ;
+            case 4 :
+                break;
+            case 5 : printf("Saindo"); break ;
+            default:
+                printf("Opcao inexistente\n");
+        }
+    }
 }
 
 
