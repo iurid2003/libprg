@@ -88,7 +88,9 @@ void menu(lista_c * Contatos){
         printf("editar contato : 4\n");
 
         printf("Sair: 5\n");
+        printf("Escolha : ");
         scanf("%d",&p);
+        printf("\n");
 
         switch (p) {
             case 1 : ler_contato(Contatos->contatos + Contatos->tamanho);
