@@ -103,8 +103,8 @@ void menu(lista_c * Contatos){
                     Contatos->tamanho++ ; break ;
             case 2 : imprimir_contatos(Contatos);break ;
             case 3 :
-                printf("Entre com o nome : ");
                 getchar();
+                printf("Entre com o nome : ");
                 fgets(nome,100,stdin);
                 buscar_contato(lista_a(),nome);
                 break ;
