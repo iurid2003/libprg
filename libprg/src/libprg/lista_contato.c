@@ -22,10 +22,13 @@ lista_c *lista_a() {
 /* Função para ler um novo contato */
 void ler_contato(Contatos_c *c) {
     printf("Entre com o nome: ");
+    getchar();
     fgets(c->nome, 100, stdin);
     printf("Entre com o email: ");
+    getchar();
     fgets(c->email, 50, stdin);
     printf("Entre com o numero: ");
+    getchar();
     fgets(c->telefone, 20, stdin);
 
     printf("Contato lido");
