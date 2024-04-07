@@ -46,7 +46,7 @@ void inserir_contato_lista(lista_c* lista , Contatos_c c) {
 void buscar_contato(lista_c * lista , char * nome){
     for(int i = 0 ; i < lista->tamanho; i++ ){
         if(strcmp(lista->contatos[i].nome,nome) == 0 ){
-            printf("----Contato Encotrado----");
+            printf("----Contato Encotrado----\n");
             printf(" Nome : %s ", lista->contatos[i].nome);
             printf("Email : %s ", lista->contatos[i].email);
             printf("Telefone : %s ", lista->contatos[i].telefone);
