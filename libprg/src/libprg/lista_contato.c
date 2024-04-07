@@ -50,7 +50,7 @@ void buscar_contato(lista_c * lista , char * nome){
             printf("Email : %s ", lista->contatos[i].email);
             printf("Telefone : %s ", lista->contatos[i].telefone);
 
-            return ;
+
         }
     }
     printf("Esse nome não foi encontrado.\n");
