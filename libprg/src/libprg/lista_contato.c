@@ -14,7 +14,7 @@ typedef struct lista {
 lista_c *lista_a() {
     lista_c *lista = (lista_c *) malloc(sizeof(lista_c));
     lista->tamanho = 0;
-    lista->capacidade = 10;
+    lista->capacidade = 50;
     lista->contatos = (Contatos_c *) malloc(sizeof(Contatos_c) * lista->capacidade);
     return lista;
 }
