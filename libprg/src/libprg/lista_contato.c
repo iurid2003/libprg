@@ -108,7 +108,7 @@ void menu(lista_c * Contatos){
                 getchar();
                 printf("Entre com o nome : ");
                 fgets(nome,100,stdin);
-                buscar_contato(lista_a(),nome);
+                buscar_contato(Contatos,nome);
                 break ;
             case 4 : printf("Saindo"); break ;
             default:
