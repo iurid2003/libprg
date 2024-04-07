@@ -83,10 +83,10 @@ void realocar_lista(lista_c * lista){
 
 }
 
+
 void menu(lista_c * Contatos){
     int p = 0 ;
     char nome[100] ;
-
     while (p != 5){
         printf("---CONTATOS---\n");
         printf("ESCOLHA UMA FUNCAO\n");
@@ -94,20 +94,18 @@ void menu(lista_c * Contatos){
         printf("Imprimir contatos: 2\n");
         printf("buscar contato : 3\n");
         printf("Sair: 4\n");
-
         printf("Escolha : ");
         scanf("%d",&p);
         printf("\n");
-
         switch (p) {
-            case 1 : ler_contato(&Contatos[Contatos->tamanho]);
-                    Contatos->tamanho++ ; break ;
+            case 1 : ler_contato(Contatos->contatos + Contatos->tamanho);
+                Contatos->tamanho++ ; break ;
             case 2 : imprimir_contatos(Contatos);break ;
             case 3 :
                 getchar();
                 printf("Entre com o nome : ");
                 fgets(nome,100,stdin);
-                buscar_contato(Contatos,nome);
+                buscar_contato(lista_a(),nome);
                 break ;
             case 4 : printf("Saindo"); break ;
             default:
