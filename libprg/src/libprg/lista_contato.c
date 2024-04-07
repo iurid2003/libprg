@@ -21,15 +21,15 @@ lista_c *lista_a() {
 
 /* Função para ler um novo contato */
 /*Tenho que fazer voltar */
-void ler_contato(lista_c* lista ) {
+void ler_contato(Contatos_c * c) {
     getchar();
     printf("---CONTATO---\n");
     printf("Entre com o nome: ");
-    fgets(lista->contatos->nome, 100, stdin);
+    fgets(c->nome, 100, stdin);
     printf("Entre com o email: ");
-    fgets(lista->contatos->email, 50, stdin);
+    fgets(c->email, 50, stdin);
     printf("Entre com o numero: ");
-    fgets(lista->contatos->telefone, 20, stdin);
+    fgets(c->telefone, 20, stdin);
 
     printf("Contato lido");
     // vou colocar pra voltar pro menu principal ;
@@ -100,14 +100,14 @@ void menu(lista_c * Contatos){
         printf("\n");
 
         switch (p) {
-            case 1 : ler_contato(Contatos->contatos + Contatos->tamanho);
+            case 1 : ler_contato(&Contatos[Contatos->tamanho]);
                     Contatos->tamanho++ ; break ;
             case 2 : imprimir_contatos(Contatos);break ;
             case 3 :
                 getchar();
                 printf("Entre com o nome : ");
                 fgets(nome,100,stdin);
-                buscar_contato(lista_a(),nome);
+                buscar_contato(Contatos,nome);
                 break ;
             case 4 : printf("Saindo"); break ;
             default:
