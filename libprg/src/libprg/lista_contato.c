@@ -77,7 +77,7 @@ void editar_contato(lista_c * lista , int pos_lista ){
     char novo_nome[100];
     char novo_email[50];
     char novo_tele[20];
-    printf("---EDITE---");
+    printf("---EDITE---\n");
     printf(" Nome : ");
     fgets(novo_nome,100,stdin);
     printf("Email : ");
