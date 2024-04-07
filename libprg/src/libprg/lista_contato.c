@@ -62,7 +62,7 @@ void imprimir_contatos(lista_c *lista) {
     printf("--LISTA DE CONTATOS--\n");
     for (int i = 0; i < lista->tamanho; ++i) {
         printf("---CONTATO---\n");
-        printf("Posicao %d\n",lista->contatos[i]);
+        printf("Posicao %d\n",lista->tamanho);
         printf(" Nome : %s ", lista->contatos[i].nome);
         printf("Email : %s ", lista->contatos[i].email);
         printf("Telefone : %s ", lista->contatos[i].telefone);
