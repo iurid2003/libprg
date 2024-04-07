@@ -87,7 +87,8 @@ void realocar_lista(lista_c * lista){
 void menu(lista_c * Contatos){
     int p = 0 ;
     char nome[100] ;
-    Contatos_c  contatos ;
+    /*Passando localamente a estrutura contatos*/
+    Contatos_c  novo_contato ;
     while (p != 5){
         printf("---CONTATOS---\n");
         printf("ESCOLHA UMA FUNCAO\n");
@@ -100,8 +101,8 @@ void menu(lista_c * Contatos){
         printf("\n");
         switch (p) {
             /*Ponteiro para um unico contato*/
-            case 1 : ler_contato(&Contatos);
-                inserir_contato_lista(Contatos,contatos) ; break ;
+            case 1 : ler_contato(&novo_contato);
+                inserir_contato_lista(Contatos,novo_contato) ; break ;
             case 2 : imprimir_contatos(Contatos);break ;
             case 3 :
                 getchar();
