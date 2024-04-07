@@ -62,7 +62,7 @@ void imprimir_contatos(lista_c *lista) {
     printf("--LISTA DE CONTATOS--\n");
     for (int i = 0; i < lista->tamanho; ++i) {
         printf("---CONTATO---\n");
-        printf("Posicao %d\n",lista->tamanho);
+        printf("Posicao %d\n",i + 1);
         printf(" Nome : %s ", lista->contatos[i].nome);
         printf("Email : %s ", lista->contatos[i].email);
         printf("Telefone : %s ", lista->contatos[i].telefone);
@@ -87,6 +87,7 @@ void realocar_lista(lista_c * lista){
 void menu(lista_c * Contatos){
     int p = 0 ;
     char nome[100] ;
+    Contatos_c contatos ;
     while (p != 5){
         printf("---CONTATOS---\n");
         printf("ESCOLHA UMA FUNCAO\n");
@@ -98,8 +99,11 @@ void menu(lista_c * Contatos){
         scanf("%d",&p);
         printf("\n");
         switch (p) {
-            case 1 : ler_contato(Contatos->contatos + Contatos->tamanho);
-                Contatos->tamanho++ ; break ;
+            case 1:
+                ler_contato(&contatos); // Ler o novo contato
+                inserir_contato_lista(Contatos,contatos); // Inserir o novo contato na lista
+                break;
+                ; break ;
             case 2 : imprimir_contatos(Contatos);break ;
             case 3 :
                 getchar();
