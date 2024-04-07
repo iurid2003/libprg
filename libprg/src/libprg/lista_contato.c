@@ -31,7 +31,7 @@ void ler_contato(Contatos_c * c) {
     printf("Entre com o numero: ");
     fgets(c->telefone, 20, stdin);
 
-    printf("Contato lido");
+    printf("Contato lido\n");
     // vou colocar pra voltar pro menu principal ;
 }
 
