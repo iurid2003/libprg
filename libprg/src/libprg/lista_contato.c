@@ -100,14 +100,14 @@ void menu(lista_c * Contatos){
         printf("\n");
 
         switch (p) {
-            case 1 : ler_contato(&Contatos[Contatos->tamanho]);
+            case 1 :  ler_contato(Contatos->contatos + Contatos->tamanho);;
                     Contatos->tamanho++ ; break ;
             case 2 : imprimir_contatos(Contatos);break ;
             case 3 :
                 getchar();
                 printf("Entre com o nome : ");
                 fgets(nome,100,stdin);
-                buscar_contato(Contatos,nome);
+                buscar_contato(lista_a(),nome);
                 break ;
             case 4 : printf("Saindo"); break ;
             default:
