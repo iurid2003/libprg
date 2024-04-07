@@ -78,11 +78,11 @@ void editar_contato(lista_c * lista , int pos_lista ){
     char novo_email[50];
     char novo_tele[20];
     printf("---EDITE---");
-    printf("Novo Nome : ");
+    printf(" Nome : ");
     fgets(novo_nome,100,stdin);
-    printf("Novo Email : ");
+    printf("Email : ");
     fgets(novo_email,50,stdin);
-    printf("Novo telefone");
+    printf("telefone : ");
     fgets(novo_tele,20,stdin);
 
     strcpy(lista->contatos[pos_lista].nome,novo_nome);
