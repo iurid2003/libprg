@@ -43,7 +43,7 @@ void inserir_contato_lista(lista_c* lista , Contatos_c c) {
 }
 
 /*buscar contato especifico */
-void buscar_contato(lista_c * lista , char * nome){
+int buscar_contato(lista_c * lista , char * nome){
     for(int i = 0 ; i < lista->tamanho; i++ ){
         if(strcmp(lista->contatos[i].nome,nome) == 0 ){
             printf("----Contato Encotrado----\n");
@@ -51,10 +51,11 @@ void buscar_contato(lista_c * lista , char * nome){
             printf("Email : %s ", lista->contatos[i].email);
             printf("Telefone : %s ", lista->contatos[i].telefone);
             printf("\n");
-            return;
+            return 0 ;
         }
     }
     printf("Esse nome não foi encontrado.\n");
+    return  -1 ;
 }
 
 /* Função para imprimir todos os contatos */
@@ -90,6 +91,7 @@ void menu(lista_c * Contatos){
     char nome[100] ;
     /*Passando localamente a estrutura contatos*/
     Contatos_c  novo_contato ;
+    int indice_busca = -1 ;
     while (p != 5){
         printf("---CONTATOS---\n");
         printf("ESCOLHA UMA FUNCAO\n");
@@ -109,7 +111,7 @@ void menu(lista_c * Contatos){
                 getchar();
                 printf("Entre com o nome : ");
                 fgets(nome,100,stdin);
-                buscar_contato(Contatos,nome);
+               indice_busca = buscar_contato(Contatos,nome);
                 break ;
             case 4 : printf("Saindo"); break ;
             default:
