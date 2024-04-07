@@ -38,8 +38,6 @@ void ler_contato(Contatos_c * c) {
 /* Função para inserir um contato na lista */
 void inserir_contato_lista(lista_c* lista , Contatos_c c) {
     lista->contatos[lista->tamanho++] = c;
-
-
 }
 
 /*buscar contato especifico */
@@ -51,7 +49,8 @@ int buscar_contato(lista_c * lista , char * nome){
             printf("Email : %s ", lista->contatos[i].email);
             printf("Telefone : %s ", lista->contatos[i].telefone);
             printf("\n");
-            return 0 ;
+            return i ;  /*retornando a posicao na lista */
+
         }
     }
     printf("Esse nome não foi encontrado.\n");
@@ -72,9 +71,26 @@ void imprimir_contatos(lista_c *lista) {
     }
 }
 
-void deletar_contato(lista_c * lista, int indice, char *nome){
-    lista[indice]  ;
+void editar_contato(lista_c * lista , int pos_lista ){
+    getchar();
+    int op = 0 ;
+    char novo_nome[100];
+    char novo_email[50];
+    char novo_tele[20];
+    printf("---EDITE---");
+    printf("Novo Nome : ");
+    fgets(novo_nome,100,stdin);
+    printf("Novo Email : ");
+    fgets(novo_email,50,stdin);
+    printf("Novo telefone");
+    fgets(novo_tele,20,stdin);
+
+    strcpy(lista->contatos[pos_lista].nome,novo_nome);
+    strcpy(lista->contatos[pos_lista].telefone,novo_tele);
+    strcpy(lista->contatos[pos_lista].email,novo_email);
+    printf("Editado Com Sucesso\n");
 }
+
 
 /*Quando eu deletar um contato da lista terei colocor os contatos de novo em ordem*/
 void realocar_lista(lista_c * lista){
@@ -112,6 +128,21 @@ void menu(lista_c * Contatos){
                 printf("Entre com o nome : ");
                 fgets(nome,100,stdin);
                indice_busca = buscar_contato(Contatos,nome);
+               if(indice_busca != -1){
+                   int op = 0 ;
+                   printf("Entre com uma opcao \n");
+                   printf(" 1 para editar ou 2 para deletar \n");
+                   scanf("%d",&op);
+
+                   switch (op) {
+                       case 1 :
+                           editar_contato(Contatos,indice_busca); break ;
+                       case 2 :
+                           break;
+                       default:
+                           printf("Opcao invalida\n");
+                   }
+               }
                 break ;
             case 4 : printf("Saindo"); break ;
             default:
