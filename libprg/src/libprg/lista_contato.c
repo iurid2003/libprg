@@ -21,15 +21,15 @@ lista_c *lista_a() {
 
 /* Função para ler um novo contato */
 /*Tenho que fazer voltar */
-void ler_contato(Contatos_c *c) {
+void ler_contato(lista_c* lista ) {
     getchar();
     printf("---CONTATO---\n");
     printf("Entre com o nome: ");
-    fgets(c->nome, 100, stdin);
+    fgets(lista->contatos->nome, 100, stdin);
     printf("Entre com o email: ");
-    fgets(c->email, 50, stdin);
+    fgets(lista->contatos->email, 50, stdin);
     printf("Entre com o numero: ");
-    fgets(c->telefone, 20, stdin);
+    fgets(lista->contatos->telefone, 20, stdin);
 
     printf("Contato lido");
     // vou colocar pra voltar pro menu principal ;
@@ -62,7 +62,7 @@ void imprimir_contatos(lista_c *lista) {
     printf("--LISTA DE CONTATOS--\n");
     for (int i = 0; i < lista->tamanho; ++i) {
         printf("---CONTATO---\n");
-        printf("Posicao %d",lista->contatos[i]);
+        printf("Posicao %d\n",lista->contatos[i]);
         printf(" Nome : %s ", lista->contatos[i].nome);
         printf("Email : %s ", lista->contatos[i].email);
         printf("Telefone : %s ", lista->contatos[i].telefone);

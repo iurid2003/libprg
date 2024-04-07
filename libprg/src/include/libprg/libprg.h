@@ -41,7 +41,7 @@ result_t compute(double a, double b, operation_t op);
 typedef  struct  lista lista_c  ;
 lista_c *lista_a();
 void inserir_contato_lista(lista_c* lista , Contatos_c c);
-void ler_contato(Contatos_c *c);
+void ler_contato(lista_c* lista );
 void imprimir_contatos(lista_c *lista);
 void menu(lista_c * Contatos);
 // PILHA ;
