@@ -109,7 +109,7 @@ void menu(lista_c * Contatos){
     int indice_busca = -1 ;
     while (p != 5){
 
-        printf("---CONTATOS---\n");
+        printf("\n----CONTATOS----\n");
         printf("ESCOLHA UMA FUNCAO\n");
         printf("novo contato : 1 \n");
         printf("Imprimir contatos: 2\n");
@@ -144,13 +144,13 @@ void menu(lista_c * Contatos){
                            printf("Telefone : ");
                            fgets(telefone,20,stdin);
                            editar_contato(Contatos,indice_busca,nome,email,telefone);
-                           printf("Editado Com Sucesso\n"); break ;
+                           printf("Editado Com Sucesso"); break ;
                        case 2 :
                              deletar_contato(Contatos, indice_busca);
                            if(deletar_contato(Contatos,indice_busca == 1)){
-                               printf("Deletado com Sucesso");
+                               printf("Deletado com Sucesso\n");
                            }else{
-                               printf("Erro ao Deletar");
+                               printf("Erro ao Deletar\n");
                            }
                            break;
                        default:
