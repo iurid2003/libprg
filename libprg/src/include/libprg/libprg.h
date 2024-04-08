@@ -45,6 +45,7 @@ void ler_contato(Contatos_c * c) ;
 void inserir_contato_lista(lista_c* lista , Contatos_c c) ;
 void editar_contato(lista_c * lista , int pos_lista );
 void menu(lista_c * Contatos);
+int deletar_contato(lista_c * lista , int indice);
 // PILHA ;
 //typedef  struct Pilha_a Pilha ;
 //Pilha * Criar_Pilha();

@@ -26,10 +26,13 @@ void ler_contato(Contatos_c * c) {
     printf("---CONTATO---\n");
     printf("Entre com o nome: ");
     fgets(c->nome, 100, stdin);
+
     printf("Entre com o email: ");
     fgets(c->email, 50, stdin);
+
     printf("Entre com o numero: ");
     fgets(c->telefone, 20, stdin);
+
 
     printf("Contato lido\n");
     // vou colocar pra voltar pro menu principal ;
@@ -91,14 +94,17 @@ void editar_contato(lista_c * lista , int pos_lista ){
     printf("Editado Com Sucesso\n");
 }
 
-
-/*Quando eu deletar um contato da lista terei colocor os contatos de novo em ordem*/
-void realocar_lista(lista_c * lista){
-    int i = 0 ;
-   while(i < lista->tamanho - 1){
-   }
+int deletar_contato(lista_c * lista , int indice){
+    int i = indice ;
+    if(indice < 0 || indice > lista->tamanho){
+        return 0   ;
+    }
+    for (i; i < lista->tamanho -1 ; i++) {
+        lista->contatos[i] = lista->contatos[i + 1];
+    }
+    lista->tamanho--;
+    return 1 ;
 }
-
 
 void menu(lista_c * Contatos){
     printf("----------------------------------------------------------------\n");
@@ -141,6 +147,12 @@ void menu(lista_c * Contatos){
                        case 1 :
                            editar_contato(Contatos,indice_busca); break ;
                        case 2 :
+                             deletar_contato(Contatos, indice_busca);
+                           if(deletar_contato(Contatos,indice_busca == 1)){
+                               printf("Deletado com Sucesso");
+                           }else{
+                               printf("Erro ao Deletar");
+                           }
                            break;
                        default:
                            printf("Opcao invalida\n");
