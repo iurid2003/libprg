@@ -60,16 +60,16 @@ int editar_contato(lista_c * lista , int pos_lista,char * nome , char * email , 
     }
 }
 /*Certo*/
-int deletar_contato(lista_c * lista , int indice){
-    int i = indice ;
-    if(indice < 0 || indice > lista->tamanho){
-        return 0   ;
+int deletar_contato(lista_c * lista, int indice) {
+    if (indice < 0 || indice >= lista->tamanho) {
+        return 0;
     }
-    for (i; i < lista->tamanho -1 ; i++) {
+
+    for (int i = indice; i < lista->tamanho - 1; i++) {
         lista->contatos[i] = lista->contatos[i + 1];
     }
     lista->tamanho--;
-    return 1 ;
+    return 1;
 }
 
 void menu(lista_c * Contatos){
