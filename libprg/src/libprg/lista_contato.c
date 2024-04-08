@@ -74,8 +74,6 @@ int deletar_contato(lista_c * lista , int indice){
 
 void menu(lista_c * Contatos){
     printf("----------------------------------------------------------------\n");
-    printf("----------------------------------------------------------------\n");
-    printf("----------------------------------------------------------------\n");
     char nome[100];
     char email[50];
     char telefone[20];
@@ -85,7 +83,7 @@ void menu(lista_c * Contatos){
     int indice_busca = -1 ;
     while (p != 4){
 
-        printf("\n----CONTATOS----\n");
+        printf("-----CONTATOS-----\n");
         printf("ESCOLHA UMA FUNCAO\n");
         printf("novo contato : 1 \n");
         printf("Imprimir contatos: 2\n");
