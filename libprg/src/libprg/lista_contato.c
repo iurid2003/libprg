@@ -21,6 +21,8 @@ lista_c *lista_a() {
 
 /* Função para ler um novo contato */
 /*Tenho que fazer voltar */
+
+/*Da pra fazer direto*/
 void ler_contato(Contatos_c * c) {
     getchar();
     printf("---CONTATO---\n");
@@ -37,7 +39,7 @@ void ler_contato(Contatos_c * c) {
     printf("Contato lido\n");
     // vou colocar pra voltar pro menu principal ;
 }
-
+/*Certo */
 /* Função para inserir um contato na lista */
 void inserir_contato_lista(lista_c* lista , Contatos_c c) {
     lista->contatos[lista->tamanho++] = c;
@@ -73,27 +75,15 @@ void imprimir_contatos(lista_c *lista) {
         printf("\n");
     }
 }
+/*Mudei*/
+void editar_contato(lista_c * lista , int pos_lista,char * nome , char * email , char * telefone ){
 
-void editar_contato(lista_c * lista , int pos_lista ){
-    getchar();
-    int op = 0 ;
-    char novo_nome[100];
-    char novo_email[50];
-    char novo_tele[20];
-    printf("---EDITE---\n");
-    printf(" Nome : ");
-    fgets(novo_nome,100,stdin);
-    printf("Email : ");
-    fgets(novo_email,50,stdin);
-    printf("telefone : ");
-    fgets(novo_tele,20,stdin);
+    strcpy(lista->contatos[pos_lista].nome,nome);
+    strcpy(lista->contatos[pos_lista].telefone,email);
+    strcpy(lista->contatos[pos_lista].email,telefone);
 
-    strcpy(lista->contatos[pos_lista].nome,novo_nome);
-    strcpy(lista->contatos[pos_lista].telefone,novo_tele);
-    strcpy(lista->contatos[pos_lista].email,novo_email);
-    printf("Editado Com Sucesso\n");
 }
-
+/*Certo*/
 int deletar_contato(lista_c * lista , int indice){
     int i = indice ;
     if(indice < 0 || indice > lista->tamanho){
@@ -110,9 +100,10 @@ void menu(lista_c * Contatos){
     printf("----------------------------------------------------------------\n");
     printf("----------------------------------------------------------------\n");
     printf("----------------------------------------------------------------\n");
-
+    char nome[100];
+    char email[50];
+    char telefone[20];
     int p = 0 ;
-    char nome[100] ;
     /*Passando localamente a estrutura contatos*/
     Contatos_c  novo_contato ;
     int indice_busca = -1 ;
@@ -128,7 +119,7 @@ void menu(lista_c * Contatos){
         scanf("%d",&p);
         printf("\n");
         switch (p) {
-            /*Ponteiro para um unico contato*/
+            /*Adptar para ler aqui*/
             case 1 : ler_contato(&novo_contato);
                 inserir_contato_lista(Contatos,novo_contato) ; break ;
             case 2 : imprimir_contatos(Contatos);break ;
@@ -145,7 +136,14 @@ void menu(lista_c * Contatos){
 
                    switch (op) {
                        case 1 :
-                           editar_contato(Contatos,indice_busca); break ;
+                           printf(" Nome: ");
+                           fgets(nome,200,stdin);
+                           printf("Email : ");
+                           fgets(email,50,stdin);
+                           printf("Telefone : ");
+                           fgets(telefone,20,stdin);
+                           editar_contato(Contatos,indice_busca,nome,email,telefone);
+                           printf("Editado Com Sucesso\n"); break ;
                        case 2 :
                              deletar_contato(Contatos, indice_busca);
                            if(deletar_contato(Contatos,indice_busca == 1)){
