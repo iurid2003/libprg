@@ -115,7 +115,7 @@ void menu(lista_c * Contatos){
                indice_busca = buscar_contato(Contatos,nome);
                if(indice_busca != -1){
                    printf("Contato encontrado:\n");
-                   printf("Nome: %s Email: %s Telefone: %s\n",
+                   printf("Nome: %sEmail: %sTelefone: %s\n",
                           Contatos->contatos[indice_busca].nome,
                           Contatos->contatos[indice_busca].email,
                           Contatos->contatos[indice_busca].telefone);
