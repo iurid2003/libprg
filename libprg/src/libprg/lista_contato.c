@@ -54,9 +54,9 @@ int editar_contato(lista_c * lista , int pos_lista,char * nome , char * email , 
     strcpy(lista->contatos[pos_lista].nome,nome);
     strcpy(lista->contatos[pos_lista].telefone,email);
     strcpy(lista->contatos[pos_lista].email,telefone);
-
         return 1 ;
-        }else{
+    }else
+    {
         return  0 ;
     }
 }
