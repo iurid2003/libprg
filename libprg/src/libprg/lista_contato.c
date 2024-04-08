@@ -56,12 +56,16 @@ void imprimir_contatos(lista_c *lista) {
     }
 }
 /*Mudei*/
-void editar_contato(lista_c * lista , int pos_lista,char * nome , char * email , char * telefone ){
-
+int editar_contato(lista_c * lista , int pos_lista,char * nome , char * email , char * telefone ){
+    if(pos_lista >=  0 || pos_lista <= lista->tamanho ){
     strcpy(lista->contatos[pos_lista].nome,nome);
     strcpy(lista->contatos[pos_lista].telefone,email);
     strcpy(lista->contatos[pos_lista].email,telefone);
 
+        return 1 ;
+        }else{
+        return  0 ;
+    }
 }
 /*Certo*/
 int deletar_contato(lista_c * lista , int indice){
@@ -131,8 +135,12 @@ void menu(lista_c * Contatos){
                            fgets(email,50,stdin);
                            printf("Telefone : ");
                            fgets(telefone,20,stdin);
-                           editar_contato(Contatos,indice_busca,nome,email,telefone);
-                           printf("Editado Com Sucesso"); break ;
+                           if(editar_contato(Contatos,indice_busca,nome,email,telefone) == 1){
+                               printf("Editado Com Sucesso");
+                           }else  if(editar_contato(Contatos,indice_busca,nome,email,telefone) == 0){
+                               printf("Erro Ao Editar!");
+                           }
+                            break ;
                        case 2 :
                              deletar_contato(Contatos, indice_busca);
                            if(deletar_contato(Contatos,indice_busca == 1)){
