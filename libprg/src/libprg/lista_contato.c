@@ -104,7 +104,7 @@ void menu(lista_c * Contatos){
                 fgets(novo_contato.email, 50, stdin);
                 printf("Entre com o numero: ");
                 fgets(novo_contato.telefone, 20, stdin);
-
+                printf("Contado Lido");
                 inserir_contato_lista(Contatos,novo_contato) ; break;
             case 2 : imprimir_contatos(Contatos);break ;
             case 3 :
