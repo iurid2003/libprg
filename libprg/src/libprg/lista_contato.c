@@ -118,8 +118,8 @@ void menu(lista_c * Contatos){
                indice_busca = buscar_contato(Contatos,nome);
                if(indice_busca != -1){
                    int op = 0 ;
-                   printf("Entre com uma opcao \n");
-                   printf(" 1 para editar ou 2 para deletar \n");
+                   printf("Entre com uma opcao : \n");
+                   printf(" 1 para editar ou 2 para deletar : ");
                    scanf("%d",&op);
 
                    switch (op) {
