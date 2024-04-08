@@ -50,7 +50,7 @@ void imprimir_contatos(lista_c *lista) {
 }
 /*Adptado*/
 int editar_contato(lista_c * lista , int pos_lista,char * nome , char * email , char * telefone ){
-    if(pos_lista >=  0 || pos_lista <= lista->tamanho ){
+    if(pos_lista >=  0 || pos_lista < lista->tamanho ){
     strcpy(lista->contatos[pos_lista].nome,nome);
     strcpy(lista->contatos[pos_lista].telefone,email);
     strcpy(lista->contatos[pos_lista].email,telefone);
