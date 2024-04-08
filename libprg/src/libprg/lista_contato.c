@@ -26,19 +26,12 @@ void inserir_contato_lista(lista_c* lista , Contatos_c c) {
 }
 
 /*buscar contato especifico */
-int buscar_contato(lista_c * lista , char * nome){
+int buscar_contato(lista_c * lista , char * nome ){
     for(int i = 0 ; i < lista->tamanho; i++ ){
         if(strcmp(lista->contatos[i].nome,nome) == 0 ){
-            printf("----Contato Encotrado----\n");
-            printf(" Nome : %s ", lista->contatos[i].nome);
-            printf("Email : %s ", lista->contatos[i].email);
-            printf("Telefone : %s ", lista->contatos[i].telefone);
-            printf("\n");
             return i ;  /*retornando a posicao na lista */
-
         }
     }
-    printf("Esse nome não foi encontrado.\n");
     return  -1 ;
 }
 
@@ -55,7 +48,7 @@ void imprimir_contatos(lista_c *lista) {
         printf("\n");
     }
 }
-/*Mudei*/
+/*Adptado*/
 int editar_contato(lista_c * lista , int pos_lista,char * nome , char * email , char * telefone ){
     if(pos_lista >=  0 || pos_lista <= lista->tamanho ){
     strcpy(lista->contatos[pos_lista].nome,nome);
@@ -121,6 +114,11 @@ void menu(lista_c * Contatos){
                 fgets(nome,100,stdin);
                indice_busca = buscar_contato(Contatos,nome);
                if(indice_busca != -1){
+                   printf("Contato encontrado:\n");
+                   printf("Nome: %s\nEmail: %s\nTelefone: %s\n",
+                          Contatos->contatos[indice_busca].nome,
+                          Contatos->contatos[indice_busca].email,
+                          Contatos->contatos[indice_busca].telefone);
                    int op = 0 ;
                    printf("Entre com uma opcao : \n");
                    printf(" 1 para editar ou 2 para deletar : ");
