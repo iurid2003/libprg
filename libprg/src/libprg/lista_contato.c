@@ -120,7 +120,7 @@ void menu(lista_c * Contatos){
                           Contatos->contatos[indice_busca].email,
                           Contatos->contatos[indice_busca].telefone);
                    int op = 0 ;
-                   printf("Entre com uma opcao : \n");
+                   printf("----Entre com uma opcao----\n");
                    printf(" 1 para editar ou 2 para deletar : ");
                    scanf("%d",&op);
 
