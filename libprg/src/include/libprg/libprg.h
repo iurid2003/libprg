@@ -41,7 +41,7 @@ result_t compute(double a, double b, operation_t op);
 typedef  struct  lista lista_c  ;
 lista_c *lista_a();
 void inserir_contato_lista(lista_c* lista , Contatos_c c);
-void ler_contato(Contatos_c * c) ;
+//void ler_contato(Contatos_c * c) ;
 void inserir_contato_lista(lista_c* lista , Contatos_c c) ;
 void editar_contato(lista_c * lista , int pos_lista,char * nome , char * email , char * telefone );
 void menu(lista_c * Contatos);

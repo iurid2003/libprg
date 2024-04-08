@@ -23,22 +23,20 @@ lista_c *lista_a() {
 /*Tenho que fazer voltar */
 
 /*Da pra fazer direto*/
-void ler_contato(Contatos_c * c) {
-    getchar();
-    printf("---CONTATO---\n");
-    printf("Entre com o nome: ");
-    fgets(c->nome, 100, stdin);
-
-    printf("Entre com o email: ");
-    fgets(c->email, 50, stdin);
-
-    printf("Entre com o numero: ");
-    fgets(c->telefone, 20, stdin);
-
-
-    printf("Contato lido\n");
-    // vou colocar pra voltar pro menu principal ;
-}
+//void ler_contato(Contatos_c * c) {
+//    getchar();
+//    printf("---CONTATO---\n");
+//    printf("Entre com o nome: ");
+//    fgets(c->nome, 100, stdin);
+//    printf("Entre com o email: ");
+//    fgets(c->email, 50, stdin);
+//    printf("Entre com o numero: ");
+//    fgets(c->telefone, 20, stdin);
+//
+//
+//    printf("Contato lido\n");
+//    // vou colocar pra voltar pro menu principal ;
+//}
 /*Certo */
 /* Função para inserir um contato na lista */
 void inserir_contato_lista(lista_c* lista , Contatos_c c) {
@@ -120,8 +118,15 @@ void menu(lista_c * Contatos){
         printf("\n");
         switch (p) {
             /*Adptar para ler aqui*/
-            case 1 : ler_contato(&novo_contato);
-                inserir_contato_lista(Contatos,novo_contato) ; break ;
+            case 1 : printf("---CONTATO---\n");
+                printf("Entre com o nome: ");
+                fgets(novo_contato.nome, 100, stdin);
+                printf("Entre com o email: ");
+                fgets(novo_contato.email, 50, stdin);
+                printf("Entre com o numero: ");
+                fgets(novo_contato.telefone, 20, stdin);
+
+                inserir_contato_lista(Contatos,novo_contato) ; break;
             case 2 : imprimir_contatos(Contatos);break ;
             case 3 :
                 getchar();
