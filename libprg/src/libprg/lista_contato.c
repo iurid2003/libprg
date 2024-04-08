@@ -137,7 +137,7 @@ void menu(lista_c * Contatos){
                    switch (op) {
                        case 1 :
                            getchar();
-                           printf(" Nome: ");
+                           printf("Nome : ");
                            fgets(nome,200,stdin);
                            printf("Email : ");
                            fgets(email,50,stdin);
