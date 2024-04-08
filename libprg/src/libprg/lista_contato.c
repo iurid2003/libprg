@@ -37,7 +37,6 @@ int buscar_contato(lista_c * lista , char * nome ){
 
 /* Função para imprimir todos os contatos */
 void imprimir_contatos(lista_c *lista) {
-    getchar();
     printf("--LISTA DE CONTATOS--\n");
     for (int i = 0; i < lista->tamanho; ++i) {
         printf("---CONTATO---\n");
@@ -50,10 +49,10 @@ void imprimir_contatos(lista_c *lista) {
 }
 /*Adptado*/
 int editar_contato(lista_c * lista , int pos_lista,char * nome , char * email , char * telefone ){
-    if(pos_lista >=  0 || pos_lista < lista->tamanho ){
+    if(pos_lista >=  0 && pos_lista < lista->tamanho ){
     strcpy(lista->contatos[pos_lista].nome,nome);
-    strcpy(lista->contatos[pos_lista].telefone,email);
-    strcpy(lista->contatos[pos_lista].email,telefone);
+    strcpy(lista->contatos[pos_lista].telefone,telefone);
+    strcpy(lista->contatos[pos_lista].email,email);
         return 1 ;
     }else
     {
@@ -84,7 +83,7 @@ void menu(lista_c * Contatos){
     /*Passando localamente a estrutura contatos*/
     Contatos_c  novo_contato ;
     int indice_busca = -1 ;
-    while (p != 5){
+    while (p != 4){
 
         printf("\n----CONTATOS----\n");
         printf("ESCOLHA UMA FUNCAO\n");
@@ -141,7 +140,7 @@ void menu(lista_c * Contatos){
                             break ;
                        case 2 :
                              deletar_contato(Contatos, indice_busca);
-                           if(deletar_contato(Contatos,indice_busca == 1)){
+                           if(deletar_contato(Contatos,indice_busca) == 1){
                                printf("Deletado com Sucesso\n");
                            }else{
                                printf("Erro ao Deletar\n");
