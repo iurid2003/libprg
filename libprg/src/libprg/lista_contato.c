@@ -19,24 +19,6 @@ lista_c *lista_a() {
     return lista;
 }
 
-/* Função para ler um novo contato */
-/*Tenho que fazer voltar */
-
-/*Da pra fazer direto*/
-//void ler_contato(Contatos_c * c) {
-//    getchar();
-//    printf("---CONTATO---\n");
-//    printf("Entre com o nome: ");
-//    fgets(c->nome, 100, stdin);
-//    printf("Entre com o email: ");
-//    fgets(c->email, 50, stdin);
-//    printf("Entre com o numero: ");
-//    fgets(c->telefone, 20, stdin);
-//
-//
-//    printf("Contato lido\n");
-//    // vou colocar pra voltar pro menu principal ;
-//}
 /*Certo */
 /* Função para inserir um contato na lista */
 void inserir_contato_lista(lista_c* lista , Contatos_c c) {
