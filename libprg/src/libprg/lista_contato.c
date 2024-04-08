@@ -147,29 +147,14 @@ void menu(lista_c * Contatos){
                    }
                }
                 break ;
-            case 4 : printf("Saindo"); break ;
+            case 4 : printf("Saindo");
+                return ;
             default:
                 printf("Opcao inexistente\n");
         }
     }
 }
 
-
-
-//int main() {
-//    lista_c *minha_lista = lista_a();
-//    Contatos_c novo_contato;
-//
-//    ler_contato(&novo_contato);
-//    inserir_contato_lista(minha_lista, novo_contato);
-//    imprimir_contato(minha_lista);
-//
-//    // Lembrando de liberar a memória alocada
-//    free(minha_lista->contatos);
-//    free(minha_lista);
-//
-//    return 0;
-//}
 
 
 
