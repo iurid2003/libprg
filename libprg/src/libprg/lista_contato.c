@@ -119,6 +119,7 @@ void menu(lista_c * Contatos){
         switch (p) {
             /*Adptar para ler aqui*/
             case 1 : printf("---CONTATO---\n");
+                getchar();
                 printf("Entre com o nome: ");
                 fgets(novo_contato.nome, 100, stdin);
                 printf("Entre com o email: ");
