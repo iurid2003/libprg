@@ -96,19 +96,22 @@ void editar_contato(lista_c * lista , int pos_lista ){
 void realocar_lista(lista_c * lista){
     int i = 0 ;
    while(i < lista->tamanho - 1){
-
    }
-
 }
 
 
 void menu(lista_c * Contatos){
+    printf("----------------------------------------------------------------\n");
+    printf("----------------------------------------------------------------\n");
+    printf("----------------------------------------------------------------\n");
+
     int p = 0 ;
     char nome[100] ;
     /*Passando localamente a estrutura contatos*/
     Contatos_c  novo_contato ;
     int indice_busca = -1 ;
     while (p != 5){
+
         printf("---CONTATOS---\n");
         printf("ESCOLHA UMA FUNCAO\n");
         printf("novo contato : 1 \n");
