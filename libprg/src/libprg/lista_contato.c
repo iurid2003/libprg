@@ -21,15 +21,26 @@ int inserir_contato_lista(lista_c* lista , Contatos_c c) {
 }
 
 /*buscar contato especifico */
-int buscar_contato(lista_c * lista , char * nome ){
-    for(int i = 0 ; i < lista->tamanho; i++ ){
-        if(strcmp(lista->contatos[i].nome,nome) == 0 ){
-            return i ;  /*retornando a posicao na lista */
-        }
-    }
-    return  -1 ;
-}
+//int buscar_contato(lista_c * lista , char * nome ){
+//    for(int i = 0 ; i < lista->tamanho; i++ ){
+//        if(strcmp(lista->contatos[i].nome,nome) == 0 ){
+//            return i ;  /*retornando a posicao na lista */
+//        }
+//    }
+//    return  -1 ;
+//}
 
+int buscar_contato(lista_c  * lista, char nome[100], int* resultados) {
+
+    int contagem = 0;
+
+    for (int i = 0; i < lista->tamanho; ++i) {
+        if (strcasestr(lista->contatos[i].nome ,nome) != NULL) {
+            resultados[contagem] = i;
+            contagem++;
+        }
+    }return contagem;
+}
 /* Função para imprimir todos os contatos */
 void imprimir_contatos(lista_c *lista) {
     printf("--LISTA DE CONTATOS--\n");
