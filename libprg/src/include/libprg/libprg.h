@@ -34,8 +34,21 @@ result_t compute(double a, double b, operation_t op);
 //void ler_contato(Contatos * c);
 
 //LISTA CONTATO
-typedef  struct  Contatos Contatos_c ;
-typedef  struct  lista lista_c  ;
+
+typedef struct Contatos {
+    char nome[100];
+    char email[50];
+    char telefone[20];
+} Contatos_c;
+
+
+/* Definição da estrutura de Lista */
+typedef struct lista {
+    int tamanho;
+    int capacidade;
+    Contatos_c *contatos;
+} lista_c;
+
 lista_c *lista_a();
 void inserir_contato_lista(lista_c* lista , Contatos_c c);
 void inserir_contato_lista(lista_c* lista , Contatos_c c) ;

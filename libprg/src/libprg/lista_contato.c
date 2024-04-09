@@ -2,19 +2,7 @@
 
 /* Definição da estrutura de Contatos */
 
-typedef struct Contatos {
-    char nome[100];
-    char email[50];
-    char telefone[20];
-} Contatos_c;
 
-
-/* Definição da estrutura de Lista */
-typedef struct lista {
-    int tamanho;
-    int capacidade;
-    Contatos_c *contatos;
-} lista_c;
 
 /* Função para criar uma lista de Contatos */
 lista_c *lista_a() {
