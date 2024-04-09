@@ -17,7 +17,7 @@ lista_c *lista_a() {
 /* Função para inserir um contato na lista */
 int inserir_contato_lista(lista_c* lista , Contatos_c c) {
     lista->contatos[lista->tamanho++] = c;
-    if
+    return  1 ;
 }
 
 /*buscar contato especifico */
