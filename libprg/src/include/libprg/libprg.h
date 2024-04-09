@@ -11,11 +11,7 @@ typedef struct {
 } result_t;
 
 
-typedef struct Contatos {
-    char nome[100];
-    char email[50];
-    char telefone[20];
-} Contatos_c;
+
 
 typedef enum { SUM, SUB } operation_t;
 //SOMA
@@ -38,6 +34,7 @@ result_t compute(double a, double b, operation_t op);
 //void ler_contato(Contatos * c);
 
 //LISTA CONTATO
+typedef  struct  Contatos Contatos_c ;
 typedef  struct  lista lista_c  ;
 lista_c *lista_a();
 void inserir_contato_lista(lista_c* lista , Contatos_c c);

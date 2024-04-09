@@ -2,6 +2,12 @@
 
 /* Definição da estrutura de Contatos */
 
+typedef struct Contatos {
+    char nome[100];
+    char email[50];
+    char telefone[20];
+} Contatos_c;
+
 
 /* Definição da estrutura de Lista */
 typedef struct lista {
