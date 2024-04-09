@@ -15,8 +15,9 @@ lista_c *lista_a() {
 
 /*Certo */
 /* Função para inserir um contato na lista */
-void inserir_contato_lista(lista_c* lista , Contatos_c c) {
+int inserir_contato_lista(lista_c* lista , Contatos_c c) {
     lista->contatos[lista->tamanho++] = c;
+    if
 }
 
 /*buscar contato especifico */
@@ -65,92 +66,6 @@ int deletar_contato(lista_c * lista, int indice) {
     lista->tamanho--;
     return 1;
 }
-
-void menu(lista_c * Contatos){
-    printf("----------------------------------------------------------------\n");
-    char nome[100];
-    char email[50];
-    char telefone[20];
-    int p = 0 ;
-    /*Passando localamente a estrutura contatos*/
-    Contatos_c  novo_contato ;
-    int indice_busca = -1 ;
-    while (p != 4){
-
-        printf("-----CONTATOS-----\n");
-        printf("ESCOLHA UMA FUNCAO\n");
-        printf("novo contato : 1 \n");
-        printf("Imprimir contatos: 2\n");
-        printf("buscar contato : 3\n");
-        printf("Sair: 4\n");
-        printf("Escolha : ");
-        scanf("%d",&p);
-        printf("\n");
-        switch (p) {
-            /*Adptar para ler aqui*/
-            case 1 : printf("---CONTATO---\n");
-                getchar();
-                printf("Entre com o nome: ");
-                fgets(novo_contato.nome, 100, stdin);
-                printf("Entre com o email: ");
-                fgets(novo_contato.email, 50, stdin);
-                printf("Entre com o numero: ");
-                fgets(novo_contato.telefone, 20, stdin);
-                printf("Contado Lido\n");
-                inserir_contato_lista(Contatos,novo_contato) ; break;
-            case 2 : imprimir_contatos(Contatos);break ;
-            case 3 :
-                getchar();
-                printf("Entre com o nome : ");
-                fgets(nome,100,stdin);
-               indice_busca = buscar_contato(Contatos,nome);
-               if(indice_busca != -1){
-                   printf("Contato encontrado:\n");
-                   printf("Nome: %sEmail: %sTelefone: %s\n",
-                          Contatos->contatos[indice_busca].nome,
-                          Contatos->contatos[indice_busca].email,
-                          Contatos->contatos[indice_busca].telefone);
-                   int op = 0 ;
-                   printf("----Entre com uma opcao----\n");
-                   printf(" 1 para editar ou 2 para deletar : ");
-                   scanf("%d",&op);
-
-                   switch (op) {
-                       case 1 :
-                           getchar();
-                           printf("Nome : ");
-                           fgets(nome,200,stdin);
-                           printf("Email : ");
-                           fgets(email,50,stdin);
-                           printf("Telefone : ");
-                           fgets(telefone,20,stdin);
-                           if(editar_contato(Contatos,indice_busca,nome,email,telefone) == 1){
-                               printf("Editado Com Sucesso");
-                           }else  if(editar_contato(Contatos,indice_busca,nome,email,telefone) == 0){
-                               printf("Erro Ao Editar!");
-                           }
-                            break ;
-                       case 2 :
-                             deletar_contato(Contatos, indice_busca);
-                           if(deletar_contato(Contatos,indice_busca) == 1){
-                               printf("Deletado com Sucesso\n");
-                           }else{
-                               printf("Erro ao Deletar\n");
-                           }
-                           break;
-                       default:
-                           printf("Opcao invalida\n");
-                   }
-               }
-                break ;
-            case 4 : printf("Saindo");
-                return ;
-            default:
-                printf("Opcao inexistente\n");
-        }
-    }
-}
-
 
 
 
