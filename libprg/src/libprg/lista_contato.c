@@ -39,7 +39,6 @@ void imprimir_contatos(lista_c *lista) {
         printf(" Nome : %s ", lista->contatos[i].nome);
         printf("Email : %s ", lista->contatos[i].email);
         printf("Telefone : %s ", lista->contatos[i].telefone);
-        printf("\n");
     }
 }
 /*Adptado*/
