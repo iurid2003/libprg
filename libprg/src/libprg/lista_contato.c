@@ -16,8 +16,13 @@ lista_c *criar_contato() {
 /*Certo */
 /* Função para inserir um contato na lista */
 int inserir_contato_lista(lista_c* lista , Contatos_c c) {
-    lista->contatos[lista->tamanho++] = c;
-    return  1 ;
+    if(lista->capacidade < lista->tamanho) {
+        lista->contatos[lista->tamanho++] = c;
+        return  1 ;
+    }else{
+        return  0 ;
+    }
+
 }
 
 /*buscar contato especifico */
@@ -76,7 +81,7 @@ int deletar_contato(lista_c * lista, int indice) {
 void salvar_contatos(lista_c * Contato){
     FILE* arquivo = fopen("contatos.dat", "wb");
     if (arquivo == NULL) {
-        printf("Erro ao abrir o arquivo %s.\n", "contatos.dat");
+        printf("Erro ao abrir o arquivo.\n");
         return;
     }
 
@@ -88,7 +93,7 @@ void salvar_contatos(lista_c * Contato){
 void carregar_contatos(lista_c * Contato){
     FILE* arquivo = fopen("contatos.dat", "rb");
     if (arquivo == NULL) {
-        printf("Arquivo %s nao encontrado ou vazio. Criando novo arquivo...\n", "contatos.dat");
+        printf("Arquivo %s nao encontrado ou vazio.\n");
         return;
     }
 
