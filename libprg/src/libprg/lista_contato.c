@@ -44,7 +44,7 @@ int buscar_contato(lista_c  * lista, char nome[100]) {
 void imprimir_contatos(lista_c *lista) {
     printf("--LISTA DE CONTATOS--\n");
     for (int i = 0; i < lista->tamanho; ++i) {
-        printf(" CONTATO [%d] | Nome : %s | Email : %s | Telefone : %s |  ",i + 1, lista->contatos[i].nome,
+        printf(" CONTATO [%d] \n | Nome : %s | Email : %s | Telefone : %s   ",i + 1, lista->contatos[i].nome,
                lista->contatos[i].email , lista->contatos[i].telefone);
     }printf("\n");
 }
