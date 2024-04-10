@@ -16,13 +16,8 @@ lista_c *criar_contato() {
 /*Certo */
 /* Função para inserir um contato na lista */
 int inserir_contato_lista(lista_c* lista , Contatos_c c) {
-    if(lista->capacidade < lista->tamanho) {
         lista->contatos[lista->tamanho++] = c;
         return  1 ;
-    }else{
-        return  0 ;
-    }
-
 }
 
 /*buscar contato especifico */
