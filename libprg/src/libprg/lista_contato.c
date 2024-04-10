@@ -5,7 +5,7 @@
 
 
 /* Função para criar uma lista de Contatos */
-lista_c *lista_a() {
+lista_c *criar_contato() {
     lista_c *lista = (lista_c *) malloc(sizeof(lista_c));
     lista->tamanho = 0;
     lista->capacidade = 50;

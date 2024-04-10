@@ -49,10 +49,9 @@ typedef struct lista {
     Contatos_c *contatos;
 } lista_c;
 
-lista_c *lista_a();
+lista_c *criar_contato();
 int inserir_contato_lista(lista_c* lista , Contatos_c c) ;
 int editar_contato(lista_c * lista , int pos_lista,char * nome , char * email , char * telefone );
-
 int deletar_contato(lista_c * lista , int indice);
 void imprimir_contatos(lista_c *lista);
 int buscar_contato(lista_c  * lista, char nome[100]);
