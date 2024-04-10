@@ -52,7 +52,7 @@ typedef struct lista {
 lista_c *lista_a();
 int inserir_contato_lista(lista_c* lista , Contatos_c c) ;
 int editar_contato(lista_c * lista , int pos_lista,char * nome , char * email , char * telefone );
-void menu(lista_c * Contatos);
+
 int deletar_contato(lista_c * lista , int indice);
 void imprimir_contatos(lista_c *lista);
 int buscar_contato(lista_c  * lista, char nome[100]);
