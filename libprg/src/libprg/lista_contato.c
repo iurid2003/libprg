@@ -45,6 +45,7 @@ int buscar_contato(lista_c  * lista, char nome[100]) {
         }
     }return contagem;
 }
+
 /* Função para imprimir todos os contatos */
 void imprimir_contatos(lista_c *lista) {
     printf("--LISTA DE CONTATOS--\n");
