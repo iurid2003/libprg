@@ -73,7 +73,30 @@ int deletar_contato(lista_c * lista, int indice) {
     return 1;
 }
 
+void salvar_contatos(lista_c * lista){
+    FILE* arquivo = fopen("contatos.dat", "wb");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo %s.\n", "contatos.dat");
+        return;
+    }
 
+    fwrite(&lista->capacidade, sizeof(int), 1, arquivo);
+    fwrite(lista->contatos, sizeof(Contatos_c), lista->capacidade, arquivo);
+
+    fclose(arquivo);
+}
+void carregar_contatos(lista_c * lista){
+    FILE* arquivo = fopen("contatos.dat", "rb");
+    if (arquivo == NULL) {
+        printf("Arquivo %s nao encontrado ou vazio. Criando novo arquivo...\n", "contatos.dat");
+        return;
+    }
+
+    fread(&lista->capacidade, sizeof(int), 1, arquivo);
+    fread(lista->contatos, sizeof(Contatos_c), lista->capacidade, arquivo);
+
+    fclose(arquivo);
+}
 
 
 

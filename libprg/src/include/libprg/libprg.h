@@ -56,6 +56,8 @@ void menu(lista_c * Contatos);
 int deletar_contato(lista_c * lista , int indice);
 void imprimir_contatos(lista_c *lista);
 int buscar_contato(lista_c  * lista, char nome[100]);
+void salvar_contatos(lista_c * lista);
+void carregar_contatos(lista_c * lista);
 // PILHA ;
 //typedef  struct Pilha_a Pilha ;
 //Pilha * Criar_Pilha();
