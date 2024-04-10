@@ -85,15 +85,15 @@ void salvar_contatos(lista_c * Contato){
 
     fclose(arquivo);
 }
-void carregar_contatos(lista_c * lista){
+void carregar_contatos(lista_c * Contato){
     FILE* arquivo = fopen("contatos.dat", "rb");
     if (arquivo == NULL) {
         printf("Arquivo %s nao encontrado ou vazio. Criando novo arquivo...\n", "contatos.dat");
         return;
     }
 
-    fread(&lista->capacidade, sizeof(int), 1, arquivo);
-    fread(lista->contatos, sizeof(Contatos_c), lista->capacidade, arquivo);
+    fread(&Contato->capacidade, sizeof(int), 1, arquivo);
+    fread(Contato->contatos, sizeof(Contatos_c), Contato->capacidade, arquivo);
 
     fclose(arquivo);
 }
