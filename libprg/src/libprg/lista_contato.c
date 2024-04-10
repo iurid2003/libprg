@@ -73,15 +73,15 @@ int deletar_contato(lista_c * lista, int indice) {
     return 1;
 }
 
-void salvar_contatos(lista_c * lista){
+void salvar_contatos(lista_c * Contato){
     FILE* arquivo = fopen("contatos.dat", "wb");
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo %s.\n", "contatos.dat");
         return;
     }
 
-    fwrite(&lista->capacidade, sizeof(int), 1, arquivo);
-    fwrite(lista->contatos, sizeof(Contatos_c), lista->capacidade, arquivo);
+    fwrite(&Contato->capacidade, sizeof(int), 1, arquivo);
+    fwrite(Contato->contatos, sizeof(Contatos_c), Contato->capacidade, arquivo);
 
     fclose(arquivo);
 }
