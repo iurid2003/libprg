@@ -47,7 +47,7 @@ void imprimir_contatos(lista_c *lista) {
     for (int i = 0; i < lista->tamanho; ++i) {
         printf(" CONTATO [%d] \n | Nome : %s | Email : %s | Telefone : %s   ",i + 1, lista->contatos[i].nome,
                lista->contatos[i].email , lista->contatos[i].telefone);
-    }
+ }
 }
 /*Adptado*/
 int editar_contato(lista_c * lista , int pos_lista,char * nome , char * email , char * telefone ){
@@ -81,8 +81,8 @@ void salvar_contatos(lista_c * Contato){
         return;
     }
 
-    fwrite(&Contato->capacidade, sizeof(int), 1, arquivo);
-    fwrite(Contato->contatos, sizeof(Contatos_c), Contato->capacidade, arquivo);
+    fwrite(&Contato->tamanho, sizeof(int), 1, arquivo);
+    fwrite(Contato->contatos, sizeof(Contatos_c), Contato->tamanho, arquivo);
 
     fclose(arquivo);
 }
@@ -93,8 +93,8 @@ void carregar_contatos(lista_c * Contato){
         return;
     }
 
-    fread(&Contato->capacidade, sizeof(int), 1, arquivo);
-    fread(Contato->contatos, sizeof(Contatos_c), Contato->capacidade, arquivo);
+    fread(&Contato->tamanho, sizeof(int), 1, arquivo);
+    fread(Contato->contatos, sizeof(Contatos_c), Contato->tamanho, arquivo);
 
     fclose(arquivo);
 }
