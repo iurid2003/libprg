@@ -30,7 +30,7 @@ int inserir_contato_lista(lista_c* lista , Contatos_c c) {
 //    return  -1 ;
 //}
 
-int buscar_contato(lista_c  * lista, char nome[100], int* resultados) {
+int buscar_contato(lista_c  * lista, char nome[100]) {
 
     int contagem = 0;
 
