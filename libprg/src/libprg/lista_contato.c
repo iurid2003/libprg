@@ -35,8 +35,7 @@ int buscar_contato(lista_c  * lista, char nome[100], int* resultados) {
     int contagem = 0;
 
     for (int i = 0; i < lista->tamanho; ++i) {
-        if (strcasestr(lista->contatos[i].nome ,nome) != NULL) {
-            resultados[contagem] = i;
+        if ((lista->contatos[i].nome[0]) == nome[0]){
             contagem++;
         }
     }return contagem;
