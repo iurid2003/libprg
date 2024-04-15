@@ -62,6 +62,8 @@ void carregar_contatos(lista_c * Contato);
 //Pilha * Criar_Pilha();
 
 
+//Lista encadeadA
+
 
 
 
