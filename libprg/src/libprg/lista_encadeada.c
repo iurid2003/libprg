@@ -46,7 +46,7 @@ void ordenar_no(no_t ** inicio , int dado){
 
 // na hora de adicionar tenho que buscar
 
-no_t* buscar_n(no_t ** inicio , int dado ){
+ no_t* buscar_n(no_t ** inicio , int dado ){
 
     no_t  * aux , *no = NULL ;
     aux = * inicio ;
