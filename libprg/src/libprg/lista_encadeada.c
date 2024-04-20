@@ -81,7 +81,7 @@ void
 }
 
 /*Remover no*/
- bool remover(no_t** inicio, int dado){
+ bool remover(no_t ** inicio, int dado){
 no_t* atual = *inicio;
 no_t* anterior = NULL;
 while(atual != NULL){
@@ -100,7 +100,8 @@ atual = atual->proximo_t;
 return false;
 }
 // detruir nos
-void destruir(no_t** inicio){
+
+void destruir(no_t ** inicio){
 no_t* atual = *inicio;
 no_t* prox;
 while(atual != NULL){

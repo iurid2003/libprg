@@ -65,15 +65,12 @@ void carregar_contatos(lista_c * Contato);
 // Lista encadeada
 typedef struct no no_t ;
 void adicionar_no(no_t** inicio, int dado);
-void ordena_no(no_t ** lista ,int dado);
 bool remover(no_t** inicio, int dado);
 void destruir(no_t** inicio);
 
 typedef struct  lista_a Lista ;
 void criar_lista(Lista * lista);
 void adiciona_lista( Lista * lista, int dado);
-bool remover(no_t** inicio, int dado);
-void destruir(no_t** inicio);
 no_t* buscar_n(no_t ** inicio , int dado );
 
 
