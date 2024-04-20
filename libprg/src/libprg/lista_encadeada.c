@@ -11,49 +11,62 @@ typedef  struct lista_a{
      int tam ;
 }Lista;
 
-
+//Cria lista de nos
 void criar_lista(Lista * lista){
     lista->inicio = NULL ;
     lista->tam = 0 ;
 }
 
+//adiciona normalmente no  no_t
+void adicionar_no(no_t** inicio, int dado){
+no_t * novo = (no_t*) malloc(sizeof (no_t));
+novo->dado = dado;
+novo->proximo_t = *inicio;
+*inicio= novo;
 
-// adiciona normalmente
-void adicionar( Lista * lista, int dado){
-     no_t  * novo = (no_t *) malloc(sizeof(no_t));
+
+// adiciona normalmente na lista
+void adiciona_lista(Lista * lista, int dado){
+    no_t * novo = malloc(sizeof(no_t));
     novo->dado = dado ;
     novo->proximo_t = lista->inicio  ;
     lista->inicio = novo ;
     lista->tam++;
 }
 
-// adiciona ordenado
-void ordenar_no(Lista * lista , int dado){
-    no_t  * aux ,* novo = (no_t*) malloc(sizeof(no_t));
+// adiciona ordenado no No_t
+void ordena_no(no_t ** lista ,int dado){
+    no_t * aux ,  * novo = malloc(sizeof (no_t));
     if(novo){
-        novo->dado = dado;
-        if(lista->inicio == NULL){
-          novo->proximo_t = NULL ;
-        }else if (novo->dado < (lista->inicio)->dado){
-            novo->proximo_t = lista->inicio  ;
-            lista->inicio = novo;
+        novo->dado = dado ;
+        if(*lista = NULL){
+            novo->proximo_t = NULL;
+            *lista = novo ;
+
+        }else if(novo->dado < (*lista)->dado){
+            novo->proximo_t = *lista ;
+            *lista = novo ;
         }else{
-            aux = lista->inicio ;
+            aux = *lista ;
             while(aux->proximo_t && novo->dado > aux->proximo_t->dado){
                 aux = aux->proximo_t ;
                 novo->proximo_t = aux->proximo_t ;
                 aux->proximo_t = novo ;
             }
-
         }
     }else{
         printf("Erro ao alocar!");
     }
 }
 
+
+// Ordenada na lista
+void
+
+
 // na hora de adicionar tenho que buscar
 
- no_t* buscar_n(no_t ** inicio , int dado ){
+ no_t* buscar_n(no_t * inicio , int dado ){
 
     no_t  * aux , *no = NULL ;
     aux = * inicio ;
