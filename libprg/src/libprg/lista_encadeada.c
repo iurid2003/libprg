@@ -1,37 +1,44 @@
 #include "libprg/libprg.h"
 
 
-typedef struct proximo  {
-  int n ;
-}proximo_t;
-
 typedef struct no{
     int dado;
     struct no * proximo_t ;
-    int anterior ;
 } no_t;
+
+typedef  struct lista_a{
+     no_t * inicio ;
+     int tam ;
+}Lista;
+
+
+void criar_lista(Lista * lista){
+    lista->inicio = NULL ;
+    lista->tam = 0 ;
+}
 
 
 // adiciona normalmente
-void adicionar(no_t ** inicio, int dado){
-    no_t * novo = (no_t*) malloc(sizeof(no_t));
+void adicionar( Lista * lista, int dado){
+     no_t  * novo = (no_t *) malloc(sizeof(no_t));
     novo->dado = dado ;
-    novo->proximo_t = *inicio ;
-    *inicio = novo ;
+    novo->proximo_t = lista->inicio  ;
+    lista->inicio = novo ;
+    lista->tam++;
 }
 
 // adiciona ordenado
-void ordenar_no(no_t ** inicio , int dado){
+void ordenar_no(Lista * lista , int dado){
     no_t  * aux ,* novo = (no_t*) malloc(sizeof(no_t));
     if(novo){
         novo->dado = dado;
-        if(*inicio == NULL){
+        if(lista->inicio == NULL){
           novo->proximo_t = NULL ;
-        }else if (novo->dado < (*inicio)->dado){
-            novo->proximo_t = *inicio  ;
-            *inicio = novo;
+        }else if (novo->dado < (lista->inicio)->dado){
+            novo->proximo_t = lista->inicio  ;
+            lista->inicio = novo;
         }else{
-            aux = *inicio ;
+            aux = lista->inicio ;
             while(aux->proximo_t && novo->dado > aux->proximo_t->dado){
                 aux = aux->proximo_t ;
                 novo->proximo_t = aux->proximo_t ;
@@ -61,7 +68,7 @@ void ordenar_no(no_t ** inicio , int dado){
 }
 
 /*Remover no*/
-bool remover(no_t** inicio, int dado){
+ bool remover(no_t** inicio, int dado){
 no_t* atual = *inicio;
 no_t* anterior = NULL;
 while(atual != NULL){
