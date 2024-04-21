@@ -57,22 +57,26 @@ void imprimir_contatos(lista_c *lista);
 int buscar_contato(lista_c  * lista, char nome[100]);
 void salvar_contatos(lista_c * Contato);
 void carregar_contatos(lista_c * Contato);
-// PILHA ;
+// PILHA ;*
 //typedef  struct Pilha_a Pilha ;
 //Pilha * Criar_Pilha();
 
 
 // Lista encadeada
-typedef struct no no_t ;
-void adicionar_no(no_t** inicio, int dado);
-bool remover(no_t** inicio, int dado);
-void destruir(no_t** inicio);
+typedef  struct no no_t ;
+void adicionar_no(no_t ** inicio, int dado) ;
+no_t  * remove_no(no_t ** inicio , int dado);
+void ordena_no(no_t ** lista ,int dado);
+void destruir(no_t ** inicio);
+no_t  * buscar(no_t ** inicio , int dado);
+
 
 typedef struct  lista_a Lista ;
 void criar_lista(Lista * lista);
 void adiciona_lista( Lista * lista, int dado);
-no_t* buscar_n(no_t ** inicio , int dado );
-
+void inserir_ordenado_lista(Lista * lista , int dado);
+no_t  * remover(Lista * lista , int dado);
+no_t * buscar_lista(Lista * lista , int dado);
 
 
 
