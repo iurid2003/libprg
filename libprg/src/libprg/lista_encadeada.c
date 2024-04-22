@@ -3,6 +3,7 @@
 typedef struct no{
     int dado;
     struct no * proximo_t ;
+    int tam ;
 } no_t;
 
 
@@ -12,6 +13,7 @@ void adicionar_no(no_t ** inicio, int dado) {
     novo->dado = dado;
     novo->proximo_t = *inicio;
     *inicio = novo;
+    novo->tam++;
 }
 // adiciona ordenado no No_t
 
@@ -57,7 +59,7 @@ no_t  * remove_no(no_t ** inicio , int dado){
 
     return  remover ;
 }
-// destruir nos ;
+// destruir nos ;8
 void destruir(no_t ** inicio){
     no_t* atual = *inicio;
     no_t* prox;
@@ -80,6 +82,10 @@ no_t  * buscar(no_t ** inicio , int dado){
         no = aux ;
     return  no ;
 }
+
+
+// tenho que colocar os elementos em um vetor
+
 
 
 //lista
@@ -160,6 +166,22 @@ no_t * buscar_lista(Lista * lista , int dado){
      return  no ;
 
 }
+ no_t  * get_elementos(Lista * lista){
+    no_t  * aux  = NULL ;
+    int elementos[lista->tam] ;
+    aux = lista->inicio ;
+    for(int i = 0 ; i < lista->tam ;i++){
+        elementos[i] = aux->dado ;
+        aux = aux->proximo_t ;
+        lista->inicio = aux ;
+        aux = lista->inicio ;
+    }
+
+    return elementos ;
+}
+
+
+
 
 
 
