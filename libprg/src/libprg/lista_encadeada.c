@@ -149,7 +149,7 @@ void inserir_ordenado_lista(Lista * lista , int dado){
     }else{
         aux = lista->inicio ;
         while(aux->proximo_t != lista->inicio && novo->dado > aux->proximo_t->dado){
-           if()/*fazer funcao para inserir no fim */
+           /*fazer funcao para inserir no fim */
             aux = aux->proximo_t ;
             novo->proximo_t = aux->proximo_t ;
             aux->proximo_t = novo ;
