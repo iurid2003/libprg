@@ -3,7 +3,6 @@
 typedef struct no{
     int dado;
     struct no * proximo_t ;
-    int tam ;
 } no_t;
 
 
@@ -91,6 +90,7 @@ no_t  * buscar(no_t ** inicio , int dado){
 //lista
 typedef  struct lista_a{
     no_t * inicio ;
+    no_t * fim ;
     int tam ;
 }Lista;
 
@@ -104,6 +104,7 @@ void adiciona_lista(Lista * lista, int dado){
     no_t * novo = malloc(sizeof(no_t));
     novo->dado = dado ;
     novo->proximo_t = lista->inicio  ;
+    lista->fim = lista->inicio ;
     lista->inicio = novo ;
     lista->tam++;
 }
@@ -118,12 +119,14 @@ void inserir_ordenado_lista(Lista * lista , int dado){
     }else if(novo->dado < lista->inicio->dado){
         novo->proximo_t = lista->inicio ;
         lista->inicio = novo ;
+        lista->fim = lista->inicio ;
     }else{
         aux = lista->inicio ;
         while(aux->proximo_t && novo->dado > aux->proximo_t->dado){
             aux = aux->proximo_t ;
             novo->proximo_t = aux->proximo_t ;
             aux->proximo_t = novo ;
+
         }
     }
     lista->tam++;
@@ -178,7 +181,6 @@ no_t * buscar_lista(Lista * lista , int dado){
         lista->inicio = aux ;
         aux = lista->inicio ;
     }
-
     return elementos ;
 }
 
@@ -187,13 +189,19 @@ no_t * buscar_lista(Lista * lista , int dado){
 
 int main(void){
 
-
+   Lista * lista  = NULL ;
 
    int dado ;
     printf("Entre com o dado");
     scanf("%d",&dado);
 
-    adiciona_lista(,dado);
+    adiciona_lista(lista,dado);
+    get_elementos(lista);
+
+
+
+
+
 
 
 
