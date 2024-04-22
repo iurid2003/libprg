@@ -78,6 +78,7 @@ void adiciona_lista( Lista * lista, int dado);
 void inserir_ordenado_lista(Lista * lista , int dado);
 no_t  * remover(Lista * lista , int dado);
 no_t * buscar_lista(Lista * lista , int dado);
+int *get_elementos(Lista * lista);
 
 
 

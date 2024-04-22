@@ -3,38 +3,57 @@
 typedef struct no{
     int dado;
     struct no * proximo_t ;
+    struct no * anterior_t ;
 } no_t;
 
+
+/*Lista dupalmente encadeada*/
 
 //adiciona normalmente no  no_t
 void adicionar_no(no_t ** inicio, int dado) {
     no_t * novo = malloc(sizeof(no_t));
-    novo->dado = dado;
-    novo->proximo_t = *inicio;
-    *inicio = novo;
-    novo->tam++;
+
+    if(novo) {
+        novo->dado = dado;
+        novo->proximo_t = *inicio;
+        novo->anterior_t = NULL;
+        *inicio = novo;
+        if(*inicio){
+            (*inicio)->anterior_t = novo ;
+            *inicio = novo ;
+        }
+
+    }
 }
 // adiciona ordenado no No_t
 
-void ordena_no(no_t ** lista ,int dado){
-    no_t *aux ,  * novo = malloc(sizeof (no_t ));
-    novo->dado = dado ;
-    if(*lista == NULL){
-        novo->proximo_t = NULL  ;
-        *lista = novo ;
-    }else if(novo->dado < (*lista)->dado){
-        novo->proximo_t = *lista ;
-        *lista = novo ;
+void ordena_no(no_t ** lista ,int dado) {
+    no_t *aux, *novo = malloc(sizeof(no_t));
+    if (novo) {
+        novo->dado = dado;
 
-    }else{
-        aux = *lista ;
-        while(aux->proximo_t && novo->dado > aux->proximo_t->dado){
-            aux = aux->proximo_t ;
-            novo->proximo_t = aux->proximo_t ;
-            aux->proximo_t = novo ;        }
+        if (*lista == NULL) {
+            novo->proximo_t = NULL;
+            novo->anterior_t =NULL ;
+            *lista = novo;
+        } else if (novo->dado < (*lista)->dado) {
+            novo->proximo_t = *lista;
+            (*lista)->anterior_t = novo ;
+            *lista = novo;
+
+        } else {
+            aux = *lista;
+            while (aux->proximo_t && novo->dado > aux->proximo_t->dado) {
+                aux = aux->proximo_t;
+                aux->proximo_t = novo ;
+                novo->proximo_t = aux->proximo_t;
+                aux->proximo_t->anterior_t = novo ;
+                novo->anterior_t = aux ;
+                aux->proximo_t = novo;
+            }
+        }
     }
 }
-
 //remove no_t
 
 no_t  * remove_no(no_t ** inicio , int dado){
@@ -43,6 +62,8 @@ no_t  * remove_no(no_t ** inicio , int dado){
          if((*inicio)->dado == dado){
              remover = *inicio;
              *inicio = remover->proximo_t ;
+             if(*inicio)
+                 (*inicio)->anterior_t  = NULL ;
          }
          else{
              aux = *inicio ;
@@ -51,6 +72,8 @@ no_t  * remove_no(no_t ** inicio , int dado){
                  if(aux->proximo_t){
                      remover = aux->proximo_t ;
                      aux->proximo_t = remover->proximo_t ;
+                     if(aux->proximo_t)
+                         aux->proximo_t->anterior_t = aux ;
                  }
              }
          }
@@ -87,7 +110,7 @@ no_t  * buscar(no_t ** inicio , int dado){
 
 
 
-//lista
+//lista circular_encadeada
 typedef  struct lista_a{
     no_t * inicio ;
     no_t * fim ;
@@ -97,36 +120,39 @@ typedef  struct lista_a{
 //Cria Lista
 void criar_lista(Lista * lista){
     lista->inicio = NULL ;
+    lista->fim = NULL ;
     lista->tam = 0 ;
 }
 // adiciona normalmente na lista
 void adiciona_lista(Lista * lista, int dado){
     no_t * novo = malloc(sizeof(no_t));
-    novo->dado = dado ;
-    novo->proximo_t = lista->inicio  ;
-    lista->fim = lista->inicio ;
-    lista->inicio = novo ;
-    lista->tam++;
+    if(novo) {
+        novo->dado = dado;
+        novo->proximo_t = lista->inicio;
+        lista->inicio = novo;
+        if (lista->fim == NULL) {
+            lista->fim = novo;
+            lista->fim->proximo_t = lista->inicio;
+            lista->tam++;
+        }
+    }
 }
 
 // Ordenada na lista
 void inserir_ordenado_lista(Lista * lista , int dado){
     no_t  * aux , * novo = malloc(sizeof (no_t));
     novo->dado = dado ;
-    if(lista->inicio = NULL){
-        novo->proximo_t = NULL;
-        lista->inicio = novo ;
+    if(lista->inicio == NULL){
+        adiciona_lista(lista,dado);
     }else if(novo->dado < lista->inicio->dado){
-        novo->proximo_t = lista->inicio ;
-        lista->inicio = novo ;
-        lista->fim = lista->inicio ;
+        adiciona_lista(lista,dado);
     }else{
         aux = lista->inicio ;
-        while(aux->proximo_t && novo->dado > aux->proximo_t->dado){
+        while(aux->proximo_t != lista->inicio && novo->dado > aux->proximo_t->dado){
+           if()/*fazer funcao para inserir no fim */
             aux = aux->proximo_t ;
             novo->proximo_t = aux->proximo_t ;
             aux->proximo_t = novo ;
-
         }
     }
     lista->tam++;
@@ -137,7 +163,7 @@ no_t  * remover(Lista * lista , int dado){
     no_t *aux, * remover = NULL ;
 
     if(lista->inicio){
-        if(lista->inicio->dado = dado){
+        if(lista->inicio->dado == dado){
             remover = lista->inicio ;
             lista->inicio = remover->proximo_t ;
             lista->tam-- ;
@@ -171,18 +197,19 @@ no_t * buscar_lista(Lista * lista , int dado){
 }
 
 /*Get retornando elementos */
- no_t  * get_elementos(Lista * lista){
+ int *get_elementos(Lista * lista){
     no_t  * aux  = NULL ;
-    int elementos[lista->tam] ;
     aux = lista->inicio ;
-    for(int i = 0 ; i < lista->tam ;i++){
+    int *elementos = malloc(lista->tam * sizeof (int)) ;
+
+    for(int i = 0 ; i < lista->tam && aux != NULL ;i++){
         elementos[i] = aux->dado ;
         aux = aux->proximo_t ;
-        lista->inicio = aux ;
-        aux = lista->inicio ;
     }
     return elementos ;
 }
+//lista circular_duplamente_encadeada
+
 
 
 /*No main eu imprimo os elementos*/
