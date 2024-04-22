@@ -166,6 +166,8 @@ no_t * buscar_lista(Lista * lista , int dado){
      return  no ;
 
 }
+
+/*Get retornando elementos */
  no_t  * get_elementos(Lista * lista){
     no_t  * aux  = NULL ;
     int elementos[lista->tam] ;
@@ -181,19 +183,19 @@ no_t * buscar_lista(Lista * lista , int dado){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*Get retornando elementos */
 /*No main eu imprimo os elementos*/
 
+int main(void){
 
+
+
+   int dado ;
+    printf("Entre com o dado");
+    scanf("%d",&dado);
+
+    adiciona_lista(,dado);
+
+
+
+}
 
