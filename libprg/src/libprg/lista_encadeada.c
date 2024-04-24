@@ -165,12 +165,11 @@ void inserir_ordenado_lista(Lista * lista , int dado){
         adiciona_lista(lista,dado);
     }else{
         aux = lista->inicio ;
-        while(aux->proximo_t != lista->inicio && novo->dado > aux->proximo_t->dado){
-           /*fazer funcao para inserir no fim */
+        while(aux->proximo_t != lista->inicio &&  dado > aux->proximo_t->dado){
             aux = aux->proximo_t ;
-            novo->proximo_t = aux->proximo_t ;
-            aux->proximo_t = novo ;
         }
+        novo->proximo_t = aux->proximo_t ;
+        aux->proximo_t = novo ;
     }
     lista->tam++;
 }
