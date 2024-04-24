@@ -139,6 +139,13 @@ void adiciona_lista(Lista * lista, int dado){
     }
 }
 
+int get_tamanho(Lista * lista){
+
+    return lista->tam ;
+}
+
+
+
 
 
 // Ordenada na lista
@@ -178,7 +185,6 @@ no_t  * remover(Lista * lista , int dado){
                             aux->proximo_t = remover->proximo_t ;
                             lista->tam--;
                         }
-
             }
         }
     }
