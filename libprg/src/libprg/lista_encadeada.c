@@ -137,11 +137,13 @@ void adiciona_lista(Lista * lista, int dado ){
 
     no_t * novo  = malloc(sizeof(no_t));
     if(novo){
-        if(lista->ordenado = true) {
+        if(lista->ordenado == true) {
             novo->dado = dado;
             novo->proximo_t = lista->inicio;
             lista->inicio = novo;
             lista->tam++;
+        }else if(lista->ordenado == false){
+            printf("Ordenando");
         }
     }else{
         printf("Erro ao alocar memoria !");
