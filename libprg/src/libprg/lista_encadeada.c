@@ -191,6 +191,7 @@ no_t  * remover(Lista * lista , int dado){
         if(dado == lista->inicio->dado){
             remover  = lista->inicio ;
             lista->inicio = remover->proximo_t ;
+            lista->tam--;
         }
         else{
             aux = lista->inicio ;
@@ -199,6 +200,7 @@ no_t  * remover(Lista * lista , int dado){
                 if(aux->proximo_t){
                     remover = aux->proximo_t ;
                     aux->proximo_t = remover->proximo_t ;
+                    lista->tam--;
                 }
             }
         }
