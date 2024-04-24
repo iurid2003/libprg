@@ -116,23 +116,28 @@ typedef  struct lista_a{
     no_t * inicio ;
     no_t * fim ;
     int tam ;
+    bool ordenado ;
 }Lista;
 
 //Cria Lista
-Lista * criar_lista(){
+Lista * criar_lista(bool ordenado){
     Lista * lista = malloc(sizeof (Lista));
     if(lista) {
         lista->inicio = NULL;
         lista->fim = NULL;
         lista->tam = 0;
+        lista->ordenado = ordenado ;
         return  lista ;
     }else{
         return NULL;
     }
 }
 // adiciona normalmente na lista
-void adiciona_lista(Lista * lista, int dado){
+void adiciona_lista(Lista * lista, int dado ){
+
     no_t * novo = malloc(sizeof(no_t));
+    no_t  * aux = malloc(sizeof (no_t));
+    aux = NULL ;
     if(novo) {
         novo->dado = dado;
         novo->proximo_t = lista->inicio;
