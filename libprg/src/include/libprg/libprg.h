@@ -73,7 +73,7 @@ int getretorna_elementos(no_t ** inicio);
 
 
 typedef struct  lista_a Lista ;
-void criar_lista(Lista * lista);
+Lista * criar_lista();
 void adiciona_lista( Lista * lista, int dado);
 void inserir_ordenado_lista(Lista * lista , int dado);
 no_t  * remover(Lista * lista , int dado);

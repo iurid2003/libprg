@@ -119,10 +119,16 @@ typedef  struct lista_a{
 }Lista;
 
 //Cria Lista
-void criar_lista(Lista * lista){
-    lista->inicio = NULL ;
-    lista->fim = NULL ;
-    lista->tam = 0 ;
+Lista * criar_lista(){
+    Lista * lista = malloc(sizeof (Lista));
+    if(lista) {
+        lista->inicio = NULL;
+        lista->fim = NULL;
+        lista->tam = 0;
+        return  lista ;
+    }else{
+        return NULL;
+    }
 }
 // adiciona normalmente na lista
 void adiciona_lista(Lista * lista, int dado){
