@@ -110,6 +110,7 @@ no_t  * buscar(no_t ** inicio , int dado){
 
 
 
+
 //lista circular_encadeada
 typedef  struct lista_a{
     no_t * inicio ;
@@ -137,6 +138,8 @@ void adiciona_lista(Lista * lista, int dado){
         }
     }
 }
+
+
 
 // Ordenada na lista
 void inserir_ordenado_lista(Lista * lista , int dado){
@@ -183,7 +186,7 @@ no_t  * remover(Lista * lista , int dado){
     return  remover ;
 }
 
-// busca
+// busca na lista
 
 no_t * buscar_lista(Lista * lista , int dado){
     no_t * aux ,*no = NULL ;
@@ -214,23 +217,4 @@ no_t * buscar_lista(Lista * lista , int dado){
 
 /*No main eu imprimo os elementos*/
 
-int main(void){
-
-   Lista * lista  = NULL ;
-
-   int dado ;
-    printf("Entre com o dado");
-    scanf("%d",&dado);
-
-    adiciona_lista(lista,dado);
-    get_elementos(lista);
-
-
-
-
-
-
-
-
-}
 
