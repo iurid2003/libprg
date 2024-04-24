@@ -187,19 +187,19 @@ void inserir_ordenado_lista(Lista * lista , int dado){
 no_t  * remover(Lista * lista , int dado){
     no_t *aux, * remover = NULL ;
 
-    if(lista->inicio){
-        if(lista->inicio->dado == dado){
-            remover = lista->inicio ;
+    if(lista->inicio != NULL){
+        if(dado == lista->inicio->dado){
+            remover  = lista->inicio ;
             lista->inicio = remover->proximo_t ;
-            lista->tam-- ;
-        }else{
-            while (aux->proximo_t && aux->proximo_t->dado != NULL){
-                        aux = aux->proximo_t ;
-                        if(aux->proximo_t){
-                            remover = aux->proximo_t ;
-                            aux->proximo_t = remover->proximo_t ;
-                            lista->tam--;
-                        }
+        }
+        else{
+            aux = lista->inicio ;
+            while (aux->proximo_t != NULL && aux->proximo_t->dado != dado){
+                aux = aux->proximo_t ;
+                if(aux->proximo_t){
+                    remover = aux->proximo_t ;
+                    aux->proximo_t = remover->proximo_t ;
+                }
             }
         }
     }
