@@ -151,7 +151,6 @@ void adiciona_lista(Lista * lista, int dado ){
 }
 
 int get_tamanho(Lista * lista){
-
     return lista->tam ;
 }
 
@@ -159,19 +158,29 @@ int get_tamanho(Lista * lista){
 void inserir_ordenado_lista(Lista * lista , int dado){
     no_t  * aux , * novo = malloc(sizeof (no_t));
     novo->dado = dado ;
-    if(lista->inicio == NULL){
-        adiciona_lista(lista,dado);
-    }else if(novo->dado < lista->inicio->dado){
-        adiciona_lista(lista,dado);
-    }else{
-        aux = lista->inicio ;
-        while(aux->proximo_t != lista->inicio &&  dado > aux->proximo_t->dado){
-            aux = aux->proximo_t ;
+            ;
+    if(novo){
+        novo->dado = dado ;
+        if(lista->inicio == NULL){
+            novo->proximo_t = NULL ;
+            lista->inicio = novo ;
+        }else if(novo->dado < lista->inicio->dado){
+            novo->proximo_t = lista->inicio ;
+            lista->inicio = novo ;
+        }else {
+            aux = lista->inicio;
+            while (aux->proximo_t && novo->dado > aux->proximo_t->dado) {
+                aux = aux->proximo_t;
+                novo->proximo_t = aux->proximo_t;
+                aux->proximo_t = novo;
+            }
         }
-        novo->proximo_t = aux->proximo_t ;
-        aux->proximo_t = novo ;
+        lista->tam++;
+        }
+        else{
+        printf("Erro ao alocar");
     }
-    lista->tam++;
+
 }
 
 //Remover da lista
