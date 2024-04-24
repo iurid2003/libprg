@@ -205,7 +205,7 @@ no_t  * remover(Lista * lista , int dado){
             }
         }
     }
-
+    free(lista);
     return  remover ;
 }
 
