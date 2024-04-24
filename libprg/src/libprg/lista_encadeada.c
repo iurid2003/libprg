@@ -135,12 +135,12 @@ Lista * criar_lista(bool ordenado){
 // adiciona normalmente na lista
 void adiciona_lista(Lista * lista, int dado ){
 
-    no_t * novo = malloc(sizeof(no_t));
-    no_t  * aux = malloc(sizeof (no_t));
-    aux = NULL ;
+    no_t * novo , *aux = malloc(sizeof(no_t));
+
     if(novo) {
         novo->dado = dado;
         novo->proximo_t = lista->inicio;
+        aux = novo ;
         lista->inicio = novo;
         if (lista->fim == NULL) {
             lista->fim = novo;
