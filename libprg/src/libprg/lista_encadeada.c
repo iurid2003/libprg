@@ -116,7 +116,6 @@ no_t  * buscar(no_t ** inicio , int dado){
 //lista circular_encadeada
 typedef  struct lista_a{
     no_t * inicio ;
-    no_t * fim ;
     int tam ;
     bool ordenado ;
 }Lista;
@@ -126,7 +125,6 @@ Lista * criar_lista(bool ordenado){
     Lista * lista = malloc(sizeof (Lista));
     if(lista) {
         lista->inicio = NULL;
-        lista->fim = NULL;
         lista->tam = 0;
         lista->ordenado = ordenado ;
         return  lista ;
@@ -140,7 +138,8 @@ void adiciona_lista(Lista * lista, int dado ){
     no_t * novo  = malloc(sizeof(no_t));
     if(novo){
         novo->dado = dado ;
-        novo->proximo_t = NULL;
+        novo->proximo_t = lista->inicio ;
+        lista->inicio = novo ;
         lista->tam++;
     }else{
         printf("Erro ao alocar memoria !");
@@ -151,10 +150,6 @@ int get_tamanho(Lista * lista){
 
     return lista->tam ;
 }
-
-
-
-
 
 // Ordenada na lista
 void inserir_ordenado_lista(Lista * lista , int dado){
