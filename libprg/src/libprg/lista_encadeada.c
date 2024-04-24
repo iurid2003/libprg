@@ -1,4 +1,6 @@
 #include "libprg/libprg.h"
+#include <stddef.h>
+#include <stdbool.h>
 
 typedef struct no{
     int dado;
@@ -7,7 +9,7 @@ typedef struct no{
 } no_t;
 
 
-/*Lista dupalmente encadeada*/
+/*Lista duplamente encadeada*/
 
 //adiciona normalmente no  no_t
 void adicionar_no(no_t ** inicio, int dado) {
@@ -135,18 +137,13 @@ Lista * criar_lista(bool ordenado){
 // adiciona normalmente na lista
 void adiciona_lista(Lista * lista, int dado ){
 
-    no_t * novo , *aux = malloc(sizeof(no_t));
-
-    if(novo) {
-        novo->dado = dado;
-        novo->proximo_t = lista->inicio;
-        aux = novo ;
-        lista->inicio = novo;
-        if (lista->fim == NULL) {
-            lista->fim = novo;
-            lista->fim->proximo_t = lista->inicio;
-            lista->tam++;
-        }
+    no_t * novo  = malloc(sizeof(no_t));
+    if(novo){
+        novo->dado = dado ;
+        novo->proximo_t = NULL;
+        lista->tam++;
+    }else{
+        printf("Erro ao alocar memoria !");
     }
 }
 
