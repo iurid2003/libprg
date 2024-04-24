@@ -143,7 +143,7 @@ void adiciona_lista(Lista * lista, int dado ){
             lista->inicio = novo;
             lista->tam++;
         }else if(lista->ordenado == false){
-            printf("Ordenando");
+            inserir_ordenado_lista(lista,dado);
         }
     }else{
         printf("Erro ao alocar memoria !");
