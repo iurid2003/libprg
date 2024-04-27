@@ -1,8 +1,10 @@
 #include "libprg/libprg.h"
 
 /* Definição da estrutura de Contatos */
+typedef  struct {
+    char nome[100] ;
 
-
+}Nome;
 
 /* Função para criar uma lista de Contatos */
 lista_c *criar_contato() {
@@ -31,18 +33,19 @@ int inserir_contato_lista(lista_c* lista , Contatos_c c) {
 //}
 
 int buscar_contato(lista_c  * lista, char nome[100]) {
+    int contagem = -1;
 
-    int contagem = 0;
 
-    for (int i = 0; i < lista->tamanho; ++i) {
-        if (strcpy(lista->contatos[i].nome,nome) == 0){
-            printf("Pos %d\n",i);
-            printf("Nome : %s\n",lista->contatos[i].nome);
-            printf("Email : %s\n",lista->contatos[i].email);
-            printf("Telefone : %s\n",lista->contatos[i].telefone);
-            contagem++;
+    for (int i = 0 ; i < lista->tamanho; i++){
+        if(strstr(lista->contatos[i].nome,nome) != NULL){
+        printf("Contato[%d]",i);
+        printf("Nome : %s",lista->contatos[i].nome);
+        printf("Email : %s",lista->contatos[i].email);
+        printf("Telefone : %s",lista->contatos[i].telefone);
+        contagem++;
         }
-    }return contagem;
+    }
+    return contagem ;
 }
 
 /* Função para imprimir todos os contatos */
@@ -67,10 +70,10 @@ int editar_contato(lista_c * lista , int pos_lista,char * nome , char * email , 
 }
 /*Certo*/
 int deletar_contato(lista_c * lista, int indice) {
-    int indice_negativo = - 1  ;
-    if (indice < 0 || indice >= lista->tamanho) {
+    if (lista->tamanho == 0 || indice < 0 || indice >= lista->tamanho) {
         return 0;
     }
+
     lista->contatos[indice] = lista->contatos[lista->tamanho - 1];
     lista->tamanho--;
     return 1;
