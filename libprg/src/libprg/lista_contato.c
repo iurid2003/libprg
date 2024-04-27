@@ -35,7 +35,11 @@ int buscar_contato(lista_c  * lista, char nome[100]) {
     int contagem = 0;
 
     for (int i = 0; i < lista->tamanho; ++i) {
-        if ((lista->contatos[i].nome[0]) == nome[0]){
+        if (strcpy(lista->contatos[i].nome,nome) == 0){
+            printf("Pos %d\n",i);
+            printf("Nome : %s\n",lista->contatos[i].nome);
+            printf("Email : %s\n",lista->contatos[i].email);
+            printf("Telefone : %s\n",lista->contatos[i].telefone);
             contagem++;
         }
     }return contagem;
