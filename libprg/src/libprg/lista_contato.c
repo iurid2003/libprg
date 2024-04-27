@@ -38,7 +38,7 @@ int buscar_contato(lista_c  * lista, char nome[100]) {
 
     for (int i = 0 ; i < lista->tamanho; i++){
         if(strstr(lista->contatos[i].nome,nome) != NULL){
-        printf("Contato[%d]",i);
+        printf("Contato[%d]",i + 1);
         printf("Nome : %s",lista->contatos[i].nome);
         printf("Email : %s",lista->contatos[i].email);
         printf("Telefone : %s",lista->contatos[i].telefone);
