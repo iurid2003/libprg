@@ -30,22 +30,20 @@ int inserir_contato_lista(lista_c* lista , Contatos_c c) {
 //        }
 //    }
 //    return  -1 ;
-//}
-
 int buscar_contato(lista_c  * lista, char nome[100]) {
     int contagem = -1;
 
 
     for (int i = 0 ; i < lista->tamanho; i++){
         if(strstr(lista->contatos[i].nome,nome) != NULL){
-        printf("Contato[%d]",i + 1);
+        printf("--Contato[%d]--\n",i + 1);
         printf("Nome : %s",lista->contatos[i].nome);
         printf("Email : %s",lista->contatos[i].email);
         printf("Telefone : %s",lista->contatos[i].telefone);
         contagem++;
         }
     }
-    return contagem ;
+    return  contagem ;
 }
 
 /* Função para imprimir todos os contatos */
