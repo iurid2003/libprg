@@ -32,10 +32,13 @@ int inserir_contato_lista(lista_c* lista , Contatos_c c) {
 //    return  -1 ;
 int buscar_contato(lista_c  * lista, char nome[100]) {
     int contagem = -1;
+    if(nome != "\0"){
     for (int i = 0 ; i < lista->tamanho; i++){
         if(strstr(lista->contatos[i].nome,nome) != NULL){
         contagem++;
         }
+    }}else{
+        contagem = -1 ;
     }
     return  contagem ;
 }
