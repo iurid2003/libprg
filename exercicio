@@ -1,0 +1,30 @@
+#exercicio
+
+Exercício 1
+Evolua a biblioteca libprg, criada por você na aula de lista de sequencial,
+para ofertar diferentes funções para ordenar um vetor de inteiros por
+meio dos algoritmos
+a. método bolha, de forma crescente e decrescente
+b. ordenação por inserção
+c. ordenação por seleção, de forma crescente ou decrescente
+As definições das funções devem ser feitas obrigatoriamente no arquivo
+de cabeçalho libprg.h
+As implementações das funções obrigatoriamente no arquivo com o
+nome alg_ord_troca.c
+
+Exercicio 2
+
+Exercício 2
+Crie um projeto com CMake de uma aplicação em C que dependa da
+biblioteca libprg, criada no exercício anterior
+Faça uso do FetchContent no CMake para baixar a dependência
+Faça um programa que crie um vetor de inteiros de tamanho n,
+informado pelo usuário, e faça o povoamento desse vetor com números
+aleatórios (0 . . . INT_MAX)
+INT_MAX é definida na biblioteca limits.h
+Ordene o mesmo vetor usando cada um dos algoritmos de ordenação
+que implementou em sua biblioteca libprg
+Dica: Se iniciar a função srand sempre com uma mesma semente, então
+conseguirá reproduzir a ordem dos números sorteados. Ex: srand(1)
+Deve-se imprimir na tela o tempo gasto (relógio de parede e de CPU) por
+cada um dos algoritmos
