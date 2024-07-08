@@ -27,6 +27,7 @@ result_t compute(double a, double b, operation_t op);
 //int binario_recursivo( lista ,int i , int f ,int alvo);
 //int* inserir_numero( lista ,int num );
 //void removeNumero(lista, int num) ;
+int bublle_short(int *vet, int tamanho);
 
 // FILA
 
