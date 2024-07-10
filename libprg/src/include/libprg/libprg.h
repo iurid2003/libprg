@@ -10,9 +10,6 @@ typedef struct {
     int error;
 } result_t;
 
-
-
-
 typedef enum { SUM, SUB } operation_t;
 //SOMA
 result_t sub(double a, double b);
@@ -41,7 +38,6 @@ typedef struct Contatos {
     char email[50];
     char telefone[20];
 } Contatos_c;
-
 
 /* Definição da estrutura de Lista */
 typedef struct lista {
