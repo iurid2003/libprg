@@ -61,6 +61,9 @@ void selection_sort(int *vet, int tamanho) {
         }
     }
 }
+
+
+
 int main(void){
 
     srand(time(NULL));

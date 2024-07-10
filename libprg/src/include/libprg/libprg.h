@@ -58,7 +58,9 @@ void imprimir_contatos(lista_c *lista);
 int buscar_contato(lista_c  * lista, char nome[100]);
 void salvar_contatos(lista_c * Contato);
 void carregar_contatos(lista_c * Contato);
-// PILHA ;*
+// PILHA
+
+
 //typedef  struct Pilha_a Pilha ;
 //Pilha * Criar_Pilha();
 
@@ -72,7 +74,7 @@ void destruir(no_t ** inicio);
 no_t  * buscar(no_t ** inicio , int dado);
 int getretorna_elementos(no_t ** inicio);
 
-
+//
 typedef struct  lista_a Lista ;
 Lista * criar_lista(bool ordenado);
 void adiciona_lista( Lista * lista, int dado);
@@ -82,6 +84,12 @@ no_t * buscar_lista(Lista * lista , int dado);
 int *get_elementos(Lista * lista);
 int get_tamanho(Lista * lista);
 
+//alg_ord_troca
+void selection_sort(int *vet, int tamanho);
+int *insertion_sort(int *vetor, int tamanho);
+void burble_sort(int vetor[], int tamanho);
+
+//algo_ord_div
 
 
 
