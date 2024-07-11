@@ -3,7 +3,6 @@
 /* Definição da estrutura de Contatos */
 typedef  struct {
     char nome[100] ;
-
 }Nome;
 
 /* Função para criar uma lista de Contatos */

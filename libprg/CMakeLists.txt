@@ -9,11 +9,11 @@ set(SOURCES
         "${CMAKE_CURRENT_LIST_DIR}/src/libprg/sum.c"
         "${CMAKE_CURRENT_LIST_DIR}/src/libprg/sub.c"
         "${CMAKE_CURRENT_LIST_DIR}/src/libprg/libprg.c"
-        "${CMAKE_CURRENT_LIST_DIR}/src/libprg/lista.c"
+        "${CMAKE_CURRENT_LIST_DIR}/src/libprg/lista_linear.c"
 )
 
 add_library(libprg
-        src/libprg/lista.c
+        src/libprg/lista_linear.c
         src/libprg/fila.c
         src/libprg/lista_contato.c
         src/libprg/pilha.c
