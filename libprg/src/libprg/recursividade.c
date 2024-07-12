@@ -34,9 +34,7 @@ int main(void){
 
   int fa = mult_ite(5,3);
   printf("%d\n", fa);
-    for (int i = 0; i < ; ++i) {
-        
-    }
+
   printf("%d\n", fibonnaci(4));
 
   printf("%d\n", n_fatorial(4));
