@@ -16,7 +16,7 @@ Pilha* Criar_Pilha(){
       P->capacidade = 10 ;
       P->tamanho = 0  ;
       P->vet = (int*) malloc(sizeof(int) * P->capacidade) ;
-      return P ;
+
 }
 /*Adicionar*/
 void push(Pilha *p , int n){

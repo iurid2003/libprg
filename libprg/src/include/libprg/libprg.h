@@ -33,7 +33,7 @@ int busca_binaria_it(lista_linear*listaLinear, int n);
 int busca_binaria_rec(lista_linear*listaLinear,int inicio , int fim , int num);
 
 
-// FILA
+// PILHA
 typedef struct Pilha_a Pilha ;
 Pilha* Criar_Pilha();
 void push(Pilha *p , int n);
@@ -41,6 +41,12 @@ void pop(Pilha *p);
 int size(Pilha *p );
 void empty(Pilha *p);
 void imprimir_pilha(Pilha *p);
+
+// FILA
+
+typedef struct Fila_a Fila ;
+Fila *criar_fila();
+
 
 
 
