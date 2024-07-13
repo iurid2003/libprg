@@ -9,8 +9,6 @@ typedef struct lista_l {
     int *vetor ;
     bool vazio ;
 
-
-
 }lista_linear;
 
 
@@ -19,15 +17,14 @@ lista_linear * criar_lista(){
     lista->tamanho = 0 ;
     lista->capacidade = 100;
     lista->vazio = false ;
-    lista->vetor ;
+    lista->vetor = malloc(sizeof(lista_linear)*lista->capacidade) ;
 }
 
 void inserir(lista_linear*listaLinear , int n ){
     if(listaLinear == NULL){
         printf("Nao foi possivel colocar o numero");
     }else {
-        listaLinear->vetor[listaLinear->tamanho] = n;
-        listaLinear->tamanho++;
+        listaLinear->vetor[listaLinear->tamanho++] = n ;
     }
 }
 
@@ -58,11 +55,12 @@ int buscar(lista_linear*listaLinear ,int n){
 // Ordenada
 
 int busca_binaria_it(lista_linear*listaLinear, int n){
-    int inicio = 1 ;
-    int fim = listaLinear->tamanho ;
+    int inicio = 0;
+    int fim = listaLinear->tamanho - 1 ;
     int meio ;
 
     while (inicio <= fim){
+        meio = inicio + (fim - inicio)/2;
         if(listaLinear->vetor[meio] == n){
             return 1 ;
         }else if(listaLinear->vetor[meio] < n){
@@ -74,11 +72,44 @@ int busca_binaria_it(lista_linear*listaLinear, int n){
     return 0 ;
 }
 
+//Busca_Binaria_rec
 
+int busca_binaria_rec(lista_linear*listaLinear,int inicio , int fim , int num){
+     inicio = 1;
+     fim  = listaLinear->tamanho ;
+    int  meio  ;
+    if(inicio <= fim){
+     meio = inicio + (fim - inicio)/2;
+     if(listaLinear->vetor[meio] = num){
+         return  1;
+     }
+     if(listaLinear->vetor[meio] > num){
+         return busca_binaria_it(listaLinear,num);
+     }
 
+        return busca_binaria_it(listaLinear,num);
+    }
+}
 
+void imprimir(lista_linear*listaLinear){
+    for (int i = 0; i < listaLinear->tamanho; ++i) {
+        printf("%d ",listaLinear->vetor[i]);
+    }printf("\n");
+}
 
 int main(void){
+       lista_linear * l = criar_lista();
+
+    inserir(l,10);
+    inserir(l,11);
+    imprimir(l);
+
+   int i = busca_binaria_rec(l,1,l->tamanho,10);
+   printf("%d",i);
+
+    free(l->vetor);
+    free(l);
+
 
 }
 
