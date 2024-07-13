@@ -17,19 +17,10 @@ result_t sum(double a, double b);
 result_t compute(double a, double b, operation_t op);
 
 // LISTA
-//typedef struct lista_a lista  ;
-//lista * criar_lista();
-//int busca_linear(lista ,int alvo);
-//int busca_binaria( lista ,int tamanho, int alvo);
-//int binario_recursivo( lista ,int i , int f ,int alvo);
-//int* inserir_numero( lista ,int num );
-//void removeNumero(lista, int num) ;
-int bublle_short(int *vet, int tamanho);
+
+
 
 // FILA
-
-//void enqueue(fila) ;
-//void ler_contato(Contatos * c);
 
 //LISTA CONTATO
 

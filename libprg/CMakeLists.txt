@@ -24,6 +24,20 @@ add_library(libprg
         src/libprg/alg_ord_div.c
         Ponteiro/AULA1.c
         src/libprg/recursividade.c
+        Ponteiro/AULA2.c
+        Ponteiro/AULA3.c
+        Ponteiro/AULA4.c
+        Ponteiro/AULA5.c
+        Ponteiro/AULA6.c
+        Ponteiro/AULA7.c
+        Ponteiro/AULA8.c
+        Ponteiro/ex001.c
+        Ponteiro/ex002.c
+        Ponteiro/ex003.c
+        Ponteiro/ex004.c
+        Alocaçao/malloc.c
+        Alocaçao/calloc.c
+        Alocaçao/vetor_dinamico.c
 )
 target_sources(libprg PUBLIC ${SOURCES})
 target_include_directories(libprg PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src/include)
