@@ -81,3 +81,9 @@ void tamanho_fila_encadeada(No_f * fila){
     }
     printf("Tamanho da fila : %d ",tam);
 }
+
+void fila_vazia(No_f * fila){
+    if(fila == NULL){
+        printf("Fila Vazia ");
+    }
+}
