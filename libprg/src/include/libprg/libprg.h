@@ -25,12 +25,12 @@ typedef struct lista_l {
 
 }lista_linear;
 lista_linear * criar_lista();
-void inserir(lista_linear*listaLinear , int n );
+void inserir(lista_linear*listaLinear , int n);
 int retirar(lista_linear*listaLinear, int n);
 void imprimir(lista_linear*listaLinear);
-int buscar(lista_linear*listaLinear ,int n);
+int buscar(lista_linear*listaLinear , int n);
 int busca_binaria_it(lista_linear*listaLinear, int n);
-int busca_binaria_rec(lista_linear*listaLinear,int inicio , int fim , int num);
+int busca_binaria_rec(lista_linear*listaLinear, int inicio , int fim , int num);
 
 
 // PILHA
@@ -41,6 +41,19 @@ void pop(Pilha *p);
 int size(Pilha *p );
 void empty(Pilha *p);
 void imprimir_pilha(Pilha *p);
+
+//PILHA ENCADEADA
+typedef struct {
+    int num ;
+}dado;
+
+typedef struct  no No_p ;
+dado d();
+void imprimir_dado(dado dado1);
+void imprimir( No_p * topo);
+No_p * empillhar (No_p * topo);
+No_p * desempilhar(No_p ** topo);
+
 
 // FILA
 
@@ -77,6 +90,8 @@ void imprimir_contatos(lista_c *lista);
 int buscar_contato(lista_c  * lista, char nome[100]);
 void salvar_contatos(lista_c * Contato);
 void carregar_contatos(lista_c * Contato);
+
+
 // PILHA
 
 
