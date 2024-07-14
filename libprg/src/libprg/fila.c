@@ -97,7 +97,7 @@ void liberar_fila(Fila *fila) {
 }
 
 int main() {
-    Fila *fila = criar_fila(10); // Cria a fila com tamanho 10
+    Fila *fila = criar_fila(); // Cria a fila com tamanho 10
     if (fila != NULL) {
         enqueue(fila, 1); // Insere elementos na fila
         enqueue(fila, 2);
