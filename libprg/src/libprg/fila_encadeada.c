@@ -40,3 +40,13 @@ No_f * remover_da_fila(No_f ** fila){
     }
     return remover;
 }
+
+
+void imprimir_fila(No_f * fila){
+    printf("---FILA---");
+    while (fila){
+        printf("%d",fila->valor);
+        fila = fila->proximo ;
+    }
+    printf("--- FIM FILA ---");
+}
