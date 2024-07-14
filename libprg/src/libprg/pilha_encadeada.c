@@ -19,14 +19,14 @@ dado d(){
 
 }
 
-void imprimir_dado(dado dado1){
+void imprimir_dado_p(dado dado1){
     printf("%d\n",dado1.num);
 }
 
-void imprimir(No_p * topo){
+void imprimir_pilha(No_p * topo){
     printf("%\n---------Pilha------\n");
     while (topo){
-        imprimir_dado(topo->d);
+        imprimir_dado_p(topo->d);
         topo = topo->proximo ;
     }
     printf("----------fim da Pilha-------\n");
@@ -79,14 +79,14 @@ int main(){
                 remover = desempilhar(&topo);
                 if(remover){
                     printf("Removido com sucesso\n");
-                    imprimir_dado(remover->d);
+                    imprimir_dado_p(remover->d);
                     free(remover);
                 }else{
                     printf("Sem no a Remover");
                 }
                 break;
             case 4:
-                imprimir(topo);
+                imprimir_pilha(topo);
                 break;
             default:
                 printf("Opcao errada");

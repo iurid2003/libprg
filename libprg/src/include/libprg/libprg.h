@@ -43,14 +43,11 @@ void empty(Pilha *p);
 void imprimir_pilha(Pilha *p);
 
 //PILHA ENCADEADA
-typedef struct {
-    int num ;
-}dado;
 
 typedef struct  no No_p ;
 dado d();
-void imprimir_dado(dado dado1);
-void imprimir( No_p * topo);
+void imprimir_dado_p(dado dado1);
+void imprimir_pilha(No_p * topo);
 No_p * empillhar (No_p * topo);
 No_p * desempilhar(No_p ** topo);
 
