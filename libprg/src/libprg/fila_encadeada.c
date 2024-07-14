@@ -6,6 +6,7 @@
 
 typedef struct no_f{
     int valor ;
+    int *fim ;
      struct  no_f * proximo ;
 }No_f;
 
@@ -49,4 +50,34 @@ void imprimir_fila(No_f * fila){
         fila = fila->proximo ;
     }
     printf("--- FIM FILA ---");
+}
+
+void elemento_inicio_fila(No_f * fila){
+    if(fila) {
+        printf("%d", fila->valor);
+    }else{
+        printf("Fila vazia");
+    }
+}
+
+
+void elemento_fim_fila(No_f * fila){
+    if(fila){
+        while (fila->proximo){
+            fila = fila->proximo;
+        }
+        printf("%d",fila->valor);
+    }else{
+        printf("Fila Vazia");
+    }
+}
+
+
+void tamanho_fila_encadeada(No_f * fila){
+    int tam = 0 ;
+    while(fila){
+        tam++;
+        fila = fila->proximo;
+    }
+    printf("Tamanho da fila : %d ",tam);
 }
