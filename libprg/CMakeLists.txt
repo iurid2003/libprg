@@ -19,7 +19,7 @@ add_library(libprg
         src/libprg/pilha.c
         src/libprg/fila_encadeada.c
         src/libprg/pilha_encadeada.c
-        src/libprg/lista_encadeada.c
+        src/libprg/lista_encadeada_circular.c
         src/libprg/alg_ord_troca.c
         src/libprg/alg_ord_div.c
         Ponteiro/AULA1.c
@@ -38,6 +38,7 @@ add_library(libprg
         Alocaçao/malloc.c
         Alocaçao/calloc.c
         Alocaçao/vetor_dinamico.c
+        src/libprg/lista_circular_duplamente_encadeada.c
 )
 target_sources(libprg PUBLIC ${SOURCES})
 target_include_directories(libprg PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src/include)

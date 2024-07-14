@@ -33,6 +33,18 @@ int busca_binaria_it(lista_linear*listaLinear, int n);
 int busca_binaria_rec(lista_linear*listaLinear, int inicio , int fim , int num);
 
 
+
+//LISTA CIRCULAR ENCADEADA  (ORDENADA E NAO ORDENADA)
+
+
+
+
+
+
+//LISTA CIRCULAR DUPLAMENTE ENCADEADA (ORDENADA E NAO ORDENADA)
+
+
+
 // PILHA
 typedef struct Pilha_a Pilha ;
 Pilha* Criar_Pilha();
@@ -63,6 +75,18 @@ int dequeue(Fila *fila);
 int head(Fila *fila);
 int tail(Fila *fila);
 int size(Fila *fila);
+
+//FILA ENCADEADA
+
+typedef struct no_f No_f;
+void inserir_fila(No_f**fila, int num);
+No_f * remover_da_fila(No_f ** fila);
+void imprimir_fila(No_f * fila);
+void elemento_inicio_fila(No_f * fila);
+void elemento_fim_fila(No_f * fila);
+void tamanho_fila_encadeada(No_f * fila);
+void fila_vazia(No_f * fila);
+
 
 //LISTA CONTATO
 
@@ -106,14 +130,7 @@ no_t  * buscar(no_t ** inicio , int dado);
 int getretorna_elementos(no_t ** inicio);
 
 //
-typedef struct  lista_a Lista ;
-Lista * criar_lista(bool ordenado);
-void adiciona_lista( Lista * lista, int dado);
-void inserir_ordenado_lista(Lista * lista , int dado);
-no_t  * remover(Lista * lista , int dado);
-no_t * buscar_lista(Lista * lista , int dado);
-int *get_elementos(Lista * lista);
-int get_tamanho(Lista * lista);
+
 
 //alg_ord_troca
 void selection_sort(int *vet, int tamanho);
