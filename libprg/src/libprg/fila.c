@@ -13,12 +13,12 @@ typedef struct Fila_a {
 } Fila;
 
 // Função para criar a fila
-Fila *criar_fila(int tamanho) {
+Fila *criar_fila() {
     Fila *fila = (Fila *)malloc(sizeof(Fila)); // Aloca memória para a estrutura Fila
     if (fila != NULL) {
         fila->inicio = 0;
         fila->fim = 0;
-        fila->tam = tamanho;
+        fila->tam = 10;
         fila->qtde = 0; // Inicia com zero elementos
         fila->vet = malloc(sizeof(int) * fila->tam); // Aloca memória para o vetor da fila
         if (fila->vet == NULL) {

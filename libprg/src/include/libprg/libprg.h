@@ -46,9 +46,13 @@ void imprimir_pilha(Pilha *p);
 
 typedef struct Fila_a Fila ;
 Fila *criar_fila();
-
-
-
+bool full(Fila *fila);
+bool empty(Fila *fila);
+bool enqueue(Fila *fila, int n);
+int dequeue(Fila *fila);
+int head(Fila *fila);
+int tail(Fila *fila);
+int size(Fila *fila);
 
 //LISTA CONTATO
 
