@@ -9,6 +9,7 @@ typedef struct no_l{
 
 typedef struct {
     No_l * inicio ;
+    No_l * fim ;
     int tam ;
 }Lista_Encadeada;
 
@@ -16,15 +17,23 @@ typedef struct {
 
 void criar_lista_encadeada(Lista_Encadeada * listaEncadeada){
     listaEncadeada->inicio = NULL ;
+    listaEncadeada->fim = NULL;
     listaEncadeada->tam = 0 ;
 }
 
 void inserir_na_lista(Lista_Encadeada * inicio, int dado ){
     No_l  * novo =(No_l*)malloc(sizeof (No_l));
-    novo->dado = dado ;
-    novo->proximo = inicio->inicio ;
-    inicio->inicio = novo ;
-    inicio->tam++;
+    if(novo) {
+        novo->dado = dado;
+        novo->proximo = inicio->inicio;
+        inicio->inicio = novo;
+        if(inicio->fim == NULL){
+            inicio->fim = novo ;
+            inicio->fim->proximo = inicio->inicio ;
+        inicio->tam++;
+    }else{
+        printf("");
+    }
 }
 
 
@@ -72,8 +81,7 @@ void inserir_ordenada_lista(Lista_Encadeada *listaEncadeada, int num){
     if(novo){
         novo->dado = num ;
         if(listaEncadeada->inicio == NULL){
-             novo->proximo = NULL;
-             listaEncadeada->inicio = novo ;
+            inserir_na_lista(Lista_Encadeada,num);
         }else if(novo->dado < listaEncadeada->inicio->dado){
             novo->proximo = listaEncadeada->inicio ;
             listaEncadeada->inicio = novo ;
