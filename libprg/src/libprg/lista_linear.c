@@ -31,7 +31,7 @@ void inserir(lista_linear*listaLinear , int n ){
 int retirar(lista_linear*listaLinear, int n){
     for (int i = 0; i < listaLinear->tamanho; ++i) {
         if (listaLinear->vetor[i] == n) {
-            listaLinear->vetor[i] == listaLinear->vetor[listaLinear->tamanho-1];
+            listaLinear->vetor[i] == listaLinear->vetor[listaLinear->tamanho - 1];
             listaLinear->tamanho--;
             return 1 ;
         }
