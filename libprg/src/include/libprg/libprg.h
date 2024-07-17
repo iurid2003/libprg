@@ -121,13 +121,13 @@ void carregar_contatos(lista_c * Contato);
 
 
 // Lista encadeada
-typedef  struct no no_t ;
-void adicionar_no(no_t ** inicio, int dado) ;
-no_t  * remove_no(no_t ** inicio , int dado);
-void ordena_no(no_t ** lista ,int dado);
-void destruir(no_t ** inicio);
-no_t  * buscar(no_t ** inicio , int dado);
-int getretorna_elementos(no_t ** inicio);
+//typedef  struct no no_t ;
+//void adicionar_no(no_t ** inicio, int dado) ;
+//no_t  * remove_no(no_t ** inicio , int dado);
+//void ordena_no(no_t ** lista ,int dado);
+//void destruir(no_t ** inicio);
+//no_t  * buscar(no_t ** inicio , int dado);
+//int getretorna_elementos(no_t ** inicio);
 
 //
 

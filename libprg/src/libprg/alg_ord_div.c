@@ -34,7 +34,7 @@ int merge(int *vet, int e, int meio, int d){
         j = j + 1;
         k = k + 1;
     }
-    for (int l = 0; e < d ; d++) {
+    for (int l = 0; e < d ; ++d) {
         vet[i] = aux[i - e];
     }
 }
@@ -42,15 +42,17 @@ int merge(int *vet, int e, int meio, int d){
 
 //merge sort
 
-int merge_sort(int *vet, int e, int d){
+int *merge_sort(int *vet, int e, int d){
     int meio = 0 ;
+    int aux[d];
     if(e < d){
-        meio = e + (d - e)/2;
+        meio = (d + e)/2;
         merge_sort(vet,e,meio);
         merge_sort(vet,meio+1,d);
         merge(vet,e,meio,d);
+
     }
-    return *vet;
+    return vet;
 }
 
 
@@ -65,10 +67,12 @@ int main(void){
     }
 
     for (int i = 0; i < 10; ++i) {
+        printf("%d ",vet[i]);
+    }
+    int n = 10 ;
+    merge_sort(vet,0,n-1);
+
+    for (int i = 0; i < 10; ++i) {
         printf("%d",vet[i]);
     }
-
-
-
-
 }
