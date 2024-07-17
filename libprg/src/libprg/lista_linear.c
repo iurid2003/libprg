@@ -42,14 +42,14 @@ int retirar(lista_linear*listaLinear, int n){
 /*Buscar linear*/
 /*lista Desordenada*/
 
-int buscar(lista_linear*listaLinear ,int n){
-    for (int i = 0; i < listaLinear->tamanho; ++i) {
-        if(listaLinear->vetor[i] == n){
-            return 1;
-        }
-    }
-    return 0 ;
-}
+//int buscar(lista_linear*listaLinear ,int n){
+//    for (int i = 0; i < listaLinear->tamanho; ++i) {
+//        if(listaLinear->vetor[i] == n){
+//            return 1;
+//        }
+//    }
+//    return 0 ;
+//}
 
 /*Busca binaria*/
 // Ordenada

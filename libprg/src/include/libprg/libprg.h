@@ -46,46 +46,46 @@ int busca_binaria_rec(lista_linear*listaLinear, int inicio , int fim , int num);
 
 
 // PILHA
-typedef struct Pilha_a Pilha ;
-Pilha* Criar_Pilha();
-void push(Pilha *p , int n);
-void pop(Pilha *p);
-int size(Pilha *p );
-void empty(Pilha *p);
-void imprimir_pilha(Pilha *p);
+//typedef struct Pilha_a Pilha ;
+//Pilha* Criar_Pilha();
+//void push(Pilha *p , int n);
+//void pop(Pilha *p);
+//int size(Pilha *p );
+//void empty(Pilha *p);
+//void imprimir_pilha(Pilha *p);
 
 //PILHA ENCADEADA
 
-typedef struct  no No_p ;
-dado d();
-void imprimir_dado_p(dado dado1);
-void imprimir_pilha(No_p * topo);
-No_p * empillhar (No_p * topo);
-No_p * desempilhar(No_p ** topo);
+//typedef struct  no No_p ;
+//dado d();
+//void imprimir_dado_p(dado dado1);
+//void imprimir_pilha(No_p * topo);
+//No_p * empillhar (No_p * topo);
+//No_p * desempilhar(No_p ** topo);
 
 
 // FILA
 
-typedef struct Fila_a Fila ;
-Fila *criar_fila();
-bool full(Fila *fila);
-bool empty(Fila *fila);
-bool enqueue(Fila *fila, int n);
-int dequeue(Fila *fila);
-int head(Fila *fila);
-int tail(Fila *fila);
-int size(Fila *fila);
+//typedef struct Fila_a Fila ;
+//Fila *criar_fila();
+//bool full(Fila *fila);
+//bool empty(Fila *fila);
+//bool enqueue(Fila *fila, int n);
+//int dequeue(Fila *fila);
+//int head(Fila *fila);
+//int tail(Fila *fila);
+//int size(Fila *fila);
 
 //FILA ENCADEADA
 
-typedef struct no_f No_f;
-void inserir_fila(No_f**fila, int num);
-No_f * remover_da_fila(No_f ** fila);
-void imprimir_fila(No_f * fila);
-void elemento_inicio_fila(No_f * fila);
-void elemento_fim_fila(No_f * fila);
-void tamanho_fila_encadeada(No_f * fila);
-void fila_vazia(No_f * fila);
+//typedef struct no_f No_f;
+//void inserir_fila(No_f**fila, int num);
+//No_f * remover_da_fila(No_f ** fila);
+//void imprimir_fila(No_f * fila);
+//void elemento_inicio_fila(No_f * fila);
+//void elemento_fim_fila(No_f * fila);
+//void tamanho_fila_encadeada(No_f * fila);
+//void fila_vazia(No_f * fila);
 
 
 //LISTA CONTATO
