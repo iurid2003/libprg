@@ -3,103 +3,116 @@
 #include <time.h>
 
 
-
-
-
 //merge
 
-void merge(int *vet, int e, int meio, int direita) {
-    int aux[direita - e + 1];
-    int i = e;
-    int j = meio + 1;
-    int k = 0;
+int *merge(int *vet,int esquerda, int meio, int direita){
+    int auxiliar[direita - esquerda + 1];
+    int i = esquerda ;
+    int j = (meio + 1);
+    int k = 0 ;
 
-    while (i <= meio && j <= direita) {
-        if (vet[i] <= vet[j]) {
-            aux[k++] = vet[i++];
-        } else {
-            aux[k++] = vet[j++];
+
+    while(i <= meio && j <= direita){
+        if(vet[i] <= vet[j]){
+            auxiliar[k] = vet[i];
+            i++;
+        }else{
+            auxiliar[k] = vet[j];
+            j++ ;
         }
+        k++;
     }
 
-    while (i <= meio) {
-        aux[k++] = vet[i++];
+    while(i <= meio){
+        auxiliar[k] = vet[i];
+        i++;
+        k++;
+    }
+    while(j <= direita){
+        auxiliar[k] = vet[j];
+        j++;
+        k++;
     }
 
-    while (j <= direita) {
-        aux[k++] = vet[j++];
+    for (int l = esquerda; l <= direita ; ++l) {
+        vet[l]= auxiliar[l - esquerda];
     }
-
-    // Copia os elementos ordenados de aux de volta para vet
-    for (int l = e; l <= direita; ++l) {
-        vet[l] = aux[l - e];
-    }
+    return vet;
 }
 
 
 
 //merge sort
-void merge_sort(int *vet, int esquerda, int direita) {
+int *merge_sort(int *vet, int esquerda, int direita) {
     if (esquerda < direita) {
-        int meio = esquerda + (direita - esquerda) / 2;
-
+        int meio = esquerda + ((direita - esquerda) / 2);
+        // oredene as metades
         merge_sort(vet, esquerda, meio); // Ordena a metade esquerda do array
         merge_sort(vet, meio + 1, direita); // Ordena a metade direita do array
 
         merge(vet, esquerda, meio, direita); // Combina as duas metades ordenadas
     }
+    return vet;
 }
+
+
+
+
+
 
 
 //quick-short
-
-void troca_pos(int **vet, int **vet2) {
-    int *aux = *vet;  // Store the value of vet in aux
-    *vet = *vet2;     // Point vet to the same location as vet2
-    *vet2 = aux;      // Point vet2 to the original location of vet
-}
 
 
 
 int particiona(int *vet, int inicio, int fim)
 {
+    int aux ;
     int pivo = vet[fim];
     int i = inicio - 1 ;
-    for (int j = 0; inicio <= fim -1 ; ++i) {
+    for (int j = inicio; j <= (fim -1) ; ++j) {
         if( vet[j] <= pivo){
-            i = i + 1 ;
-            troca_pos(&vet[i],&vet[j]);
+            i++;
+            aux = vet[i];
+            vet[i]  = vet[j];
+            vet[j] = aux ;
+
         }
     }
     i = i + 1 ;
-    troca_pos(&vet[i],&vet[fim]);
+    aux = vet[i];
+    vet[i] = vet[fim];
+    vet[fim] = aux ;
     return i ;
 }
 
-void quicksort(int *vet, int inicio, int fim){
+int  *quicksort(int *vet, int inicio, int fim){
     int p ;
     if(inicio < fim){
         p = particiona(vet,inicio,fim);
         quicksort(vet,inicio,p-1);
         quicksort(vet,p + 1,fim);
     }
+    return vet ;
 }
 
 
 int main(void){
-    int vet[10];
+    int vet[10] = {1,4,34,7,8,23,12,3,5,2};
     srand(time(NULL));
-    for (int i = 0; i < 10; ++i) {
-       vet[i] = rand() % 100 ;
-    }
+
 
     for (int i = 0; i < 10; ++i) {
         printf("%d ",vet[i]);
     }printf("\n");
     int n = 10 ;
-    quicksort(vet,0,n);
+  (vet,0,n-1);
+
+    quicksort(vet,0,10-1);
 
     for (int i = 0; i < 10; ++i) {
         printf("%d ",vet[i]);
     }
+
+
 }

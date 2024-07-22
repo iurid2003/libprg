@@ -138,8 +138,8 @@ int *insertion_sort(int *vetor, int tamanho);
 void burble_sort(int vetor[], int tamanho);
 
 //algo_ord_div
-
-
+int *merge_sort(int *vet, int esquerda, int direita);
+int  *quicksort(int *vet, int inicio, int fim);
 
 
 
