@@ -25,7 +25,7 @@ typedef struct lista_l {
 
 }lista_linear;
 lista_linear * criar_lista();
-void inserir(lista_linear*listaLinear , int n);
+//void inserir(lista_linear*listaLinear , int n);
 int retirar(lista_linear*listaLinear, int n);
 void imprimir(lista_linear*listaLinear);
 int buscar(lista_linear*listaLinear , int n);
@@ -141,6 +141,30 @@ void burble_sort(int vetor[], int tamanho);
 int *merge_sort(int *vet, int esquerda, int direita);
 int  *quicksort(int *vet, int inicio, int fim);
 
+//TABELA HASH CONTATOS
+
+typedef struct {
+    char *cpf;
+    char *nome;
+    char *email;
+} pessoa_t;
+
+typedef struct no{
+    char  * chave;
+    pessoa_t *valor ;
+    struct no * prox;
+}no_t;
+
+typedef struct dicionario{
+    int tamanho ;
+    no_t ** vetor;
+}dicionario_t;
+
+
+dicionario_t *criar_dicionario(int m);
+void destruir_pessoa(pessoa_t *pessoa);
+void destruir_dicionario(dicionario_t *d);
+bool inserir(dicionario_t *d, char *chave, pessoa_t *valor);
 
 
 
