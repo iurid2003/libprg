@@ -139,6 +139,22 @@ void burble_sort(int vetor[], int tamanho);
 
 //algo_ord_div
 
+//LISTA TAREFAS
+
+typedef struct Tarefas {
+    char tarefa[200];
+    char prioridade[50];
+    char prazo[20];
+    int codigo ;
+} Tarefas_t;
+
+typedef struct lista_tarefas {
+    int tamanho;
+    int capacidade;
+    Tarefas_t * Tarefas;
+} lista_t;
+
+lista_t *criar_tarefa();
 
 
 
