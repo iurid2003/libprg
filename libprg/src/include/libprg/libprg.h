@@ -167,6 +167,7 @@ typedef struct Tarefas {
     char tarefa[200];
     char prioridade[50];
     char prazo[20];
+    char prazo_conclusao[20];
     int ID ;
 } Tarefas_t;
 
