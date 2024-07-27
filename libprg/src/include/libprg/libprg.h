@@ -25,7 +25,7 @@ typedef struct lista_l {
 
 }lista_linear;
 lista_linear * criar_lista();
-void inserir(lista_linear*listaLinear , int n);
+//void inserir(lista_linear*listaLinear , int n);
 int retirar(lista_linear*listaLinear, int n);
 void imprimir(lista_linear*listaLinear);
 int buscar(lista_linear*listaLinear , int n);
@@ -46,46 +46,46 @@ int busca_binaria_rec(lista_linear*listaLinear, int inicio , int fim , int num);
 
 
 // PILHA
-typedef struct Pilha_a Pilha ;
-Pilha* Criar_Pilha();
-void push(Pilha *p , int n);
-void pop(Pilha *p);
-int size(Pilha *p );
-void empty(Pilha *p);
-void imprimir_pilha(Pilha *p);
+//typedef struct Pilha_a Pilha ;
+//Pilha* Criar_Pilha();
+//void push(Pilha *p , int n);
+//void pop(Pilha *p);
+//int size(Pilha *p );
+//void empty(Pilha *p);
+//void imprimir_pilha(Pilha *p);
 
 //PILHA ENCADEADA
 
-typedef struct  no No_p ;
-dado d();
-void imprimir_dado_p(dado dado1);
-void imprimir_pilha(No_p * topo);
-No_p * empillhar (No_p * topo);
-No_p * desempilhar(No_p ** topo);
+//typedef struct  no No_p ;
+//dado d();
+//void imprimir_dado_p(dado dado1);
+//void imprimir_pilha(No_p * topo);
+//No_p * empillhar (No_p * topo);
+//No_p * desempilhar(No_p ** topo);
 
 
 // FILA
 
-typedef struct Fila_a Fila ;
-Fila *criar_fila();
-bool full(Fila *fila);
-bool empty(Fila *fila);
-bool enqueue(Fila *fila, int n);
-int dequeue(Fila *fila);
-int head(Fila *fila);
-int tail(Fila *fila);
-int size(Fila *fila);
+//typedef struct Fila_a Fila ;
+//Fila *criar_fila();
+//bool full(Fila *fila);
+//bool empty(Fila *fila);
+//bool enqueue(Fila *fila, int n);
+//int dequeue(Fila *fila);
+//int head(Fila *fila);
+//int tail(Fila *fila);
+//int size(Fila *fila);
 
 //FILA ENCADEADA
 
-typedef struct no_f No_f;
-void inserir_fila(No_f**fila, int num);
-No_f * remover_da_fila(No_f ** fila);
-void imprimir_fila(No_f * fila);
-void elemento_inicio_fila(No_f * fila);
-void elemento_fim_fila(No_f * fila);
-void tamanho_fila_encadeada(No_f * fila);
-void fila_vazia(No_f * fila);
+//typedef struct no_f No_f;
+//void inserir_fila(No_f**fila, int num);
+//No_f * remover_da_fila(No_f ** fila);
+//void imprimir_fila(No_f * fila);
+//void elemento_inicio_fila(No_f * fila);
+//void elemento_fim_fila(No_f * fila);
+//void tamanho_fila_encadeada(No_f * fila);
+//void fila_vazia(No_f * fila);
 
 
 //LISTA CONTATO
@@ -121,13 +121,13 @@ void carregar_contatos(lista_c * Contato);
 
 
 // Lista encadeada
-typedef  struct no no_t ;
-void adicionar_no(no_t ** inicio, int dado) ;
-no_t  * remove_no(no_t ** inicio , int dado);
-void ordena_no(no_t ** lista ,int dado);
-void destruir(no_t ** inicio);
-no_t  * buscar(no_t ** inicio , int dado);
-int getretorna_elementos(no_t ** inicio);
+//typedef  struct no no_t ;
+//void adicionar_no(no_t ** inicio, int dado) ;
+//no_t  * remove_no(no_t ** inicio , int dado);
+//void ordena_no(no_t ** lista ,int dado);
+//void destruir(no_t ** inicio);
+//no_t  * buscar(no_t ** inicio , int dado);
+//int getretorna_elementos(no_t ** inicio);
 
 //
 
@@ -138,6 +138,27 @@ int *insertion_sort(int *vetor, int tamanho);
 void burble_sort(int vetor[], int tamanho);
 
 //algo_ord_div
+int *merge_sort(int *vet, int esquerda, int direita);
+int  *quicksort(int *vet, int inicio, int fim);
+
+//TABELA HASH CONTATOS
+
+typedef struct {
+    char *cpf;
+    char *nome;
+    char *email;
+} pessoa_t;
+
+typedef struct no{
+    char  * chave;
+    pessoa_t *valor ;
+    struct no * prox;
+}no_t;
+
+typedef struct dicionario{
+    int tamanho ;
+    no_t ** vetor;
+}dicionario_t;
 
 //LISTA TAREFAS
 
@@ -156,7 +177,10 @@ typedef struct lista_tarefas {
 
 lista_t *criar_tarefa();
 
-
+dicionario_t *criar_dicionario(int m);
+void destruir_pessoa(pessoa_t *pessoa);
+void destruir_dicionario(dicionario_t *d);
+bool inserir(dicionario_t *d, char *chave, pessoa_t *valor);
 
 
 
