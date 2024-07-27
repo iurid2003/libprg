@@ -164,17 +164,17 @@ typedef struct dicionario{
 //LISTA TAREFAS
 
 typedef struct Tarefas {
-    char tarefa[200];
-    char prioridade[50];
-    char prazo[20];
-    char prazo_conclusao[20];
+    char tarefa[200]; // tipo de tarefa
+    char prioridade[50]; // prioridade ALTA , MEDIA , BAIXA
+    char prazo[20]; // dia que vai concluir
+    char prazo_conclusao[20]; // dia que concluiu
     int ID ;
 } Tarefas_t;
 
 typedef struct lista_tarefas {
-    int tamanho;
-    int capacidade;
-    Tarefas_t * Tarefas;
+    int tamanho; // TAMANHO QUE A LISTA DE TAREFAS
+    int capacidade; // CAPACIDADE DA LISTA DE TAREFAS
+    Tarefas_t * Tarefas; // VETOR DE ESTRUTURAS DE TAREFAS
 } lista_t;
 
 lista_t *criar_tarefa();
