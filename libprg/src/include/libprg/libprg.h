@@ -2,6 +2,7 @@
 #include "stdbool.h"
 #include "stdlib.h"
 #include "string.h"
+#include "time.h"
 #ifndef LIBPRG_LIBPRG_H
 #define LIBPRG_LIBPRG_H
 
@@ -166,7 +167,7 @@ typedef struct Tarefas {
     char tarefa[200];
     char prioridade[50];
     char prazo[20];
-    int codigo ;
+    int ID ;
 } Tarefas_t;
 
 typedef struct lista_tarefas {
@@ -177,10 +178,10 @@ typedef struct lista_tarefas {
 
 lista_t *criar_tarefa();
 
-dicionario_t *criar_dicionario(int m);
-void destruir_pessoa(pessoa_t *pessoa);
-void destruir_dicionario(dicionario_t *d);
-bool inserir(dicionario_t *d, char *chave, pessoa_t *valor);
+//dicionario_t *criar_dicionario(int m);
+//void destruir_pessoa(pessoa_t *pessoa);
+//void destruir_dicionario(dicionario_t *d);
+//bool inserir(dicionario_t *d, char *chave, pessoa_t *valor);
 
 
 
