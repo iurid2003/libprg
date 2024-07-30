@@ -96,22 +96,22 @@ void imprimir(lista_linear*listaLinear){
         printf("%d ",listaLinear->vetor[i]);
     }printf("\n");
 }
-
-int main(void){
-       lista_linear * l = criar_lista();
-
-    inserir(l,10);
-    inserir(l,11);
-    imprimir(l);
-
-   int i = busca_binaria_rec(l,1,l->tamanho,10);
-   printf("%d",i);
-
-    free(l->vetor);
-    free(l);
-
-
-}
+//
+//int main(void){
+//       lista_linear * l = criar_lista();
+//
+//    inserir(l,10);
+//    inserir(l,11);
+//    imprimir(l);
+//
+//   int i = busca_binaria_rec(l,1,l->tamanho,10);
+//   printf("%d",i);
+//
+//    free(l->vetor);
+//    free(l);
+//
+//
+//}
 
 
 
