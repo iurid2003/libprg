@@ -2,7 +2,7 @@
 #include "libprg/libprg.h"
 
 
- lista_t *lista_tarefa() {
+ lista_t *criar_tarefa() {
      srand(time(NULL));
      lista_t *tarefa= (lista_t *) malloc(sizeof(lista_t ));
     tarefa->tamanho = 0 ;
