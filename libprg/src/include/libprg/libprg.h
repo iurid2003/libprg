@@ -177,10 +177,10 @@ typedef struct lista_tarefas {
     Tarefas_t * Tarefas; // VETOR DE ESTRUTURAS DE TAREFAS
 } lista_t;
 
-lista_t *criar_tarefa();
+lista_t *lista_tarefa();
 int inserir_tarefa(lista_t * lista , Tarefas_t tarefas);
 void salvar_tarefas(lista_t * Tarefa);
-void carregar_tarefas(lista_t * Tarefa);
+void carregar_tarefas(lista_t * Tarefa );
 
 //dicionario_t *criar_dicionario(int m);
 //void destruir_pessoa(pessoa_t *pessoa);
