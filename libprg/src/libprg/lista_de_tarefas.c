@@ -1,6 +1,4 @@
 
-
-
 #include "libprg/libprg.h"
 
 
@@ -19,6 +17,9 @@ int inserir_tarefa(lista_t * lista , Tarefas_t tarefas){
     lista->Tarefas[lista->tamanho].ID = rand() % 1000 ; /// aqui eu gero um numero aleatorio pra servir como id de entrada
     return 1 ;
 }
+
+
+
 
 void salvar_tarefas(lista_t * Tarefa){
     FILE* arquivo = fopen("contatos.dat", "wb");
