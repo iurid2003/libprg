@@ -178,7 +178,7 @@ typedef struct lista_tarefas {
 } lista_t;
 
 lista_t *criar_tarefa();
-int inserir_tarefa(lista_t * lista , Tarefas_t Tarefas);
+int inserir_tarefa(lista_t * lista_tarefas , Tarefas_t Tarefas);
 void salvar_tarefas(lista_t * Tarefas);
 void carregar_tarefas(lista_t * Tarefas );
 

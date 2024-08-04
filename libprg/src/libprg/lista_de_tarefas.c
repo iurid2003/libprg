@@ -7,7 +7,7 @@
      lista_t *Tarefas= (lista_t *) malloc(sizeof(lista_t ));
     Tarefas->tamanho = 0 ;
     Tarefas->capacidade = 50 ;
-    Tarefas->Tarefas = (Tarefas_t *)calloc(Tarefas->capacidade,sizeof(Tarefas_t));
+    Tarefas->Tarefas = (Tarefas_t *)malloc(sizeof(Tarefas_t)*Tarefas->capacidade);
     return Tarefas;
 }
 
