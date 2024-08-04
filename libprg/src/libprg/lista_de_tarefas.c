@@ -20,7 +20,7 @@ int inserir_tarefa(lista_t * lista , Tarefas_t Tarefas){
 
 
 void salvar_tarefas(lista_t * Tarefas){
-    FILE* arquivo = fopen("contatos.dat", "wb");
+    FILE* arquivo = fopen("Tarefasd.dat", "wb");
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo.\n");
         return;
@@ -32,7 +32,7 @@ void salvar_tarefas(lista_t * Tarefas){
     fclose(arquivo);
 }
 void carregar_tarefas(lista_t * Tarefas ){
-    FILE* arquivo = fopen("contatos.dat", "rb");
+    FILE* arquivo = fopen("Tarefas.dat", "rb");
     if (arquivo == NULL) {
         printf("Arquivo %s nao encontrado ou vazio.\n");
         return;
