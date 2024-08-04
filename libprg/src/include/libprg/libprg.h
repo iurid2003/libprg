@@ -178,9 +178,9 @@ typedef struct lista_tarefas {
 } lista_t;
 
 lista_t *criar_tarefa();
-int inserir_tarefa(lista_t * lista , Tarefas_t tarefas);
-void salvar_tarefas(lista_t * Tarefa);
-void carregar_tarefas(lista_t * Tarefa );
+int inserir_tarefa(lista_t * lista , Tarefas_t Tarefas);
+void salvar_tarefas(lista_t * Tarefas);
+void carregar_tarefas(lista_t * Tarefas );
 
 //dicionario_t *criar_dicionario(int m);
 //void destruir_pessoa(pessoa_t *pessoa);
