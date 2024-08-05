@@ -166,7 +166,7 @@ typedef struct dicionario{
 typedef struct Tarefas {
     char tarefa[200]; // tipo de tarefa
     int prioridade; // prioridade ALTA , MEDIA , BAIXA
-    char prazo[20]; // dia que vai concluir
+    int mes , dia , ano; // dia que vai concluir
     char prazo_conclusao[20]; // dia que concluiu
     int ID ;
 } Tarefas_t;
