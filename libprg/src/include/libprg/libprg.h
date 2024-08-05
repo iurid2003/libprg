@@ -113,7 +113,6 @@ int buscar_contato(lista_c  * lista, char nome[100]);
 void salvar_contatos(lista_c * Contato);
 void carregar_contatos(lista_c * Contato);
 
-
 // PILHA
 
 
