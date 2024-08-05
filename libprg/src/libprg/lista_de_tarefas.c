@@ -13,7 +13,7 @@
 
 
 int inserir_tarefa(lista_t * lista , Tarefas_t Tarefas){
-    Tarefas.ID = rand() % 1000 ; /// aqui eu gero um numero aleatorio pra servir como id de entrada
+    lista->Tarefas[lista->tamanho].ID = rand() % 1000 ; /// aqui eu gero um numero aleatorio pra servir como id de entrada
     lista->Tarefas[lista->tamanho++] = Tarefas ;
     return 1 ;
 }
