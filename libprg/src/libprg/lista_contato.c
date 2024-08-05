@@ -64,7 +64,6 @@ int deletar_contato(lista_c * lista, int indice) {
     if (lista->tamanho == 0 || indice < 0 || indice >= lista->tamanho) {
         return 0;
     }
-
     lista->contatos[indice] = lista->contatos[lista->tamanho - 1];
     lista->tamanho--;
     return 1;
