@@ -55,7 +55,7 @@ no_avl_t *rotacao_direita(no_avl_t *v) {
 
 //criar no
 
-no_avl_t *criar_no(int valor){
+no_avl_t *criar_no_arvore_avl(int valor){
     no_avl_t * no = (no_avl_t *)malloc(sizeof (no_avl_t));
     no->altura = 1 ;
     no->valor = valor ;
@@ -64,13 +64,13 @@ no_avl_t *criar_no(int valor){
 }
 // inserir
 
-no_avl_t  * inserir(no_avl_t *v, int valor){
+no_avl_t  * inserir_arvore_avl(no_avl_t *v, int valor){
     if(v == NULL){
-        v = criar_no(valor);
+        v = criar_no_arvore_avl(valor);
     }else if(valor < v->valor){
-        v->direita = inserir(v->direita,valor);
+        v->direita = inserir_arvore_avl(v->direita,valor);
     }else if(valor > v->valor){
-        v->direita = inserir(v->direita,valor);
+        v->direita = inserir_arvore_avl(v->direita,valor);
     }
     v->altura = 1 + max(altura(v->esquerda), altura(v->direita));
     v = balancear(v);
@@ -123,13 +123,13 @@ no_avl_t *rotacao_dupla_esquerda(no_avl_t *v){
 
 
 
-no_avl_t *remover(no_avl_t *v, int valor) {
+no_avl_t *remover_arvore_avl(no_avl_t *v, int valor) {
     if (v == NULL) {
         return NULL;
     } else if (valor < v->valor) {
-        v->esquerda = remover(v->esquerda, valor);
+        v->esquerda = remover_arvore_avl(v->esquerda, valor);
     } else if (valor > v->valor) {
-        v->direita = remover(v->direita, valor);
+        v->direita = remover_arvore_avl(v->direita, valor);
     } else { // valor == v->valor
         if (v->esquerda == NULL || v->direita == NULL) { // nó folha ou nó com um filho
             no_avl_t *temp = v->esquerda ? v->esquerda : v->direita;
@@ -146,7 +146,7 @@ no_avl_t *remover(no_avl_t *v, int valor) {
                 aux = aux->direita;
             }
             v->valor = aux->valor;
-            v->esquerda = remover(v->esquerda, aux->valor);
+            v->esquerda = remover_arvore_avl(v->esquerda, aux->valor);
         }
     }
 
