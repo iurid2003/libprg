@@ -191,7 +191,7 @@ typedef struct dicionario{
 
 // Arvore Avl
 
-typedef struct no_avl {
+typedef struct no_avl{
     int valor ;
     int altura;
     struct  no_avl* esquerda ;

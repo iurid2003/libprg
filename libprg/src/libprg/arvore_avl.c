@@ -70,7 +70,7 @@ no_avl_t  * inserir(no_avl_t *v, int valor){
     }else if(valor < v->valor){
         v->direita = inserir(v->direita,valor);
     }else if(valor > v->valor){
-        v->direita = inserir(v->direitam,valor);
+        v->direita = inserir(v->direita,valor);
     }
     v->altura = 1 + max(altura(v->esquerda), altura(v->direita));
     v = balancear(v);
@@ -90,7 +90,7 @@ no_avl_t  * balancear(no_avl_t *v){
 // caso esquerda−direita
             return rotacao_dupla_direita(v);
         }
-    } else if (fb < −1) { // nó desregulado tem filho desregulado à direita
+    } else if (fb < -1) { // nó desregulado tem filho desregulado à direita
         if (fator_balanceamento(v->direita) < 0) {
 // caso direita−direita
             return rotacao_esquerda(v);
