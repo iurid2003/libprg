@@ -13,19 +13,20 @@ typedef struct {
 typedef struct no{
     char  * chave;
     pessoa_t *valor ;
-    struct no * prox;
+    struct no * prox; // encadeamento pra proxima posica na mesma chave
 }no_t;
 
 typedef struct dicionario{
-    int tamanho ;
-    no_t ** vetor;
+    int tamanho ; // tamanho da lista sequencia
+    no_t ** vetor; // puxa a estrutura pessoa_T
 }dicionario_t;
 
 
 //Criando dicionarios de contatos
 
 
-dicionario_t *criar_dicionario(int m){
+dicionario_t *criar_dicionario(int m) // TAMANHO DA LISTA
+{
     dicionario_t  *d = NULL;
     if(m < 1){
         return NULL;
@@ -33,10 +34,11 @@ dicionario_t *criar_dicionario(int m){
     if((d = (dicionario_t *)malloc(sizeof(dicionario_t))) == NULL){
         return NULL;
     }
-    d->tamanho = m ;
-    if((d->vetor = calloc(m, sizeof(no_t*))) == NULL ){
+       d->tamanho = m ;
+    if((d->vetor = calloc(m, sizeof(no_t*))) == NULL )
+     {
         return NULL ;
-    }
+     }
     for (int i = 0; i < m; ++i) {
         d->vetor[i] = NULL ;
     }
@@ -55,6 +57,8 @@ free(pessoa->email);
 }
 free(pessoa);
 }
+
+
 void destruir_no(no_t *no) {
 if (no != NULL) {
 free(no->chave);
@@ -98,6 +102,8 @@ return false;
 }
 no->valor = valor;
 // TODO não está tratando colisões
+// fazer uma insercao no prox no caso a lista na pos da chave estiver com uma estrutura pesoa
+
 // se houver colisão é necessário usar uma lista encadeada
 no->prox = NULL;
 // libera a memória se existir um nó anterior na posição
