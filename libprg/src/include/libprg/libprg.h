@@ -189,7 +189,7 @@ typedef struct dicionario{
 //void destruir_dicionario(dicionario_t *d);
 //bool inserir(dicionario_t *d, char *chave, pessoa_t *valor);
 
-// arvore avl
+// Arvore Avl
 
 typedef struct no_avl {
     int valor ;
