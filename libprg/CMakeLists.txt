@@ -39,7 +39,7 @@ add_library(libprg
         Alocaçao/calloc.c
         Alocaçao/vetor_dinamico.c
         src/libprg/lista_circular_duplamente_encadeada.c
-        src/libprg/lista_de_tarefas.c
+        src/libprg/arvore_avl.c
 )
 target_sources(libprg PUBLIC ${SOURCES})
 target_include_directories(libprg PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src/include)
