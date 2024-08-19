@@ -153,7 +153,6 @@ no_avl_t *remover(no_avl_t *v, int valor) {
     if (v == NULL) {
         return v;
     }
-
     // Atualizar a altura do nó atual
     v->altura = 1 + max(altura(v->esquerda), altura(v->direita));
 
